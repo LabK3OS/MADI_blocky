@@ -119,13 +119,15 @@ td {
 .content {
   visibility: hidden;
   margin: 0;
-  padding: 1ex;
+  padding: 2ex;
   position: absolute;
   direction: ltr;
 }
 pre.content {
   border: 1px solid #ccc;
   overflow: scroll;
+  font-size: 1.25em;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(247,247,247,1) 47%, rgba(240,240,240,1) 100%);
 }
 #content_blocks {
   padding: 0;
