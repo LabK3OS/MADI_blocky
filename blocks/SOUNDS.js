@@ -30,14 +30,14 @@ Blockly.defineBlocksWithJsonArray([
         "type": "field_dropdown",
         "name": "VALUE",
         "options": [
-          ["C4", "sounds/c4.m4a"],
-          ["D4", "sounds/d4.m4a"],
-          ["E4", "sounds/e4.m4a"],
-          ["F4", "sounds/f4.m4a"],
-          ["G4", "sounds/g4.m4a"],
-          ["A5", "sounds/a5.m4a"],
-          ["B5", "sounds/b5.m4a"],
-          ["C5", "sounds/c5.m4a"]
+          ["C4", "../../sounds/c4.m4a"],
+          ["D4", "../../sounds/d4.m4a"],
+          ["E4", "../../sounds/e4.m4a"],
+          ["F4", "../../sounds/f4.m4a"],
+          ["G4", "../../sounds/g4.m4a"],
+          ["A5", "../../sounds/a5.m4a"],
+          ["B5", "../../sounds/b5.m4a"],
+          ["C5", "../../sounds/c5.m4a"]
         ]
       }
     ],
