@@ -520,6 +520,7 @@ document.write('<script src="msg/' + Code.LANG + '.js"></script>\n');
 document.write('<script src="../../msg/js/' + Code.LANG + '.js"></script>\n');
 
 window.addEventListener('load', Code.init);
+/*
 var workspace = Blockly.inject(blocklyDiv,
     {media: 'media/',
   toolbox: document.getElementById('toolbox'),
@@ -537,6 +538,7 @@ var workspace = Blockly.inject(blocklyDiv,
     snap: true},
     trashcan: true
   });
+  */
 function Desc()
 {
   Blockly.Python.INFINITE_LOOP_TRAP = null;
