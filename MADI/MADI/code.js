@@ -494,6 +494,7 @@ Code.runJS = function() {
   var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
+    alert(code);
     eval(code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
