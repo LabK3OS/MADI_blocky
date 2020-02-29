@@ -821,15 +821,16 @@ AddNote("C5");
 function AddNote(name) {
    loading++;
    var audio = document.createElement("audio");
-   audio.loop = true;
+   audio.loop = false;
    audio.addEventListener("canplaythrough", function () {
       loading--;},false);
       audio.src = "sounds/" + name + ".m4a";
       audios.push(audio);
 
+
 }
 function MusicMaker(So)
 {
-  alert(So);
-  audios[So].play();
+  audios[So].play(false);
+
 }
