@@ -1,4 +1,4 @@
-function MusicMaker(So)
-{
-  audios[So].play;
-}
+
+audio.addEventListener('ended',function(){
+  audios[].pause();
+},false);

@@ -828,3 +828,8 @@ function AddNote(name) {
       audios.push(audio);
 
 }
+function MusicMaker(So)
+{
+  alert(So);
+  audios[So].play();
+}
