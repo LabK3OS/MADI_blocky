@@ -805,3 +805,26 @@ function enviar() {
     binary_state = 11;
     ws.send(rec);
 }
+
+
+var audios = [];
+var loading = 0;
+AddNote("C4");
+AddNote("D4");
+AddNote("E4");
+AddNote("F4");
+AddNote("G4");
+AddNote("A4");
+AddNote("B4");
+AddNote("C5");
+
+function AddNote(name) {
+   loading++;
+   var audio = document.createElement("audio");
+   audio.loop = true;
+   audio.addEventListener("canplaythrough", function () {
+      loading--;},false);
+      audio.src = "sounds/" + name + ".m4a";
+      audios.push(audio);
+
+}
