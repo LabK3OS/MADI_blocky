@@ -1,3 +1,4 @@
+
 /**
  * @license
  * Visual Blocks Language
@@ -24,11 +25,15 @@
  */
 'use strict';
 
-goog.provide('Blockly.JavaScript.SOUNDS');
+goog.provide('Blockly.JavaScript.TIME');
 
 goog.require('Blockly.JavaScript');
 
-Blockly.JavaScript['play_sound'] = function(block) {
-  var value = '\'' + block.getFieldValue('VALUE') + '\'';
-  return 'MusicMaker(' + value + ');\n';
+
+Blockly.JavaScript['wait'] = function(block) {
+  var value_wait_tm = Blockly.JavaScript.valueToCode(block, 'Wait_tm', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  value_wait_tm = 1000*value_wait_tm;
+  var code = 'setTimeout(() => { ; }, '+ value_wait_tm +');\n';
+  return code;
 };

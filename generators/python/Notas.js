@@ -1,6 +1,6 @@
 'use strict';
 
-goog.provide('Blockly.Python.SOUNDS');
+goog.provide('Blockly.Python.Notas');
 
 goog.require('Blockly.Python');
 
