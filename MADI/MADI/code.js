@@ -494,7 +494,6 @@ Code.runJS = function() {
   var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-    alert(code);
     eval(code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
@@ -808,6 +807,7 @@ function enviar() {
 
 
 var audios = [];
+var primer = [];
 var loading = 0;
 for(var i=0;i<61;i++)
 {
@@ -820,33 +820,23 @@ function AddNote(name) {
    audio.loop = false;
    audio.addEventListener("canplaythrough", function () {
       loading--;},false);
-      audio.src = "sounds/" + name + ".mp3";
+      audio.src = "sounds/" + name + " (mp3cut.net).mp3";
       audios.push(audio);
-
-
+      primer.push(false);
 }
-function MusicMaker(So)
+async function MusicMaker(So)
 {
-  audios[So].play();
-
+  if(audios[So].readyState==4)
+  {
+    audios[So].playbackRate = 3;
+    audios[So].play();
+  }
 }
 
-function sleep(milliseconds) {
+function sleepi(milliseconds) {
   const date = Date.now();
   let currentDate = null;
   do {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
-
-}
-function Exito(Resultado)
-{
-  alert(resultado);
-  sleep(1000);
-  audios[So].pause();
-  audios[So].currentTime=0;
-}
-function Fracaso(error)
-{
-  alert(error);
 }
