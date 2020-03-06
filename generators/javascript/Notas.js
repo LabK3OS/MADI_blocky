@@ -32,5 +32,5 @@ Blockly.JavaScript['play_sound'] = function(block) {
   var value = '\'' + block.getFieldValue('VALUE') + '\'';
   var dropdown_tiempo = block.getFieldValue('Tiempo');
   var checkbox_seguida = block.getFieldValue('Seguida') == 'FALSE';
-  return 'MusicMaker(' + value + ',' + dropdown_tiempo + ');\nsleepi(' + dropdown_tiempo + ');\n';
+  return 'MusicMaker(' + value + ',' + dropdown_tiempo + ',' + checkbox_seguida + ');\nsleepi(' + dropdown_tiempo + ');\n';
 };
