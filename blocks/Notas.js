@@ -24,7 +24,7 @@ Blockly.defineBlocksWithJsonArray([
   // Block for colour picker.
   {
     "type": "play_sound",
-    "message0": "Reproducir %1",
+    "message0": "Reproducir %1 %2 Tiempo %3",
     "args0": [
       {
         "type": "field_dropdown",
@@ -92,11 +92,27 @@ Blockly.defineBlocksWithJsonArray([
           ["B5", "59"],
           ["C6", "60"]
         ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "Tiempo",
+        "options": [
+          ["Maxima","0.125"],
+          ["Longa","0.25"],
+          ["Cuadrada","0.5"],
+          ["Redonda","1"],
+          ["Blanca","2"],
+          ["Negra","4"],
+          ["Corchea","8"]
+        ]
       }
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": 355,
+    "colour": 350,
     "tooltip": "",
     "helpUrl": ""
   }

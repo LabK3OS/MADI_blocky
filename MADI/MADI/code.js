@@ -805,11 +805,11 @@ function enviar() {
     ws.send(rec);
 }
 
-
+var repro=[];
 var audios = [];
 var primer = [];
 var loading = 0;
-for(var i=0;i<61;i++)
+for(var i=0;i<244;i++)
 {
   AddNote(i);
 }
@@ -820,17 +820,56 @@ function AddNote(name) {
    audio.loop = false;
    audio.addEventListener("canplaythrough", function () {
       loading--;},false);
+      if(name<61)
+      {
       audio.src = "sounds/" + name + " (mp3cut.net).mp3";
+      repro.push(0);
+      }
+      else if (name>=61 && name<122)
+      {
+        name=name-61;
+        audio.src = "sounds/" + name + " (mp3cut.net) - copia.mp3";
+      }
+      else if (name>=122 && name<183)
+      {
+        name=name-122;
+        audio.src = "sounds/" + name + " (mp3cut.net) - copia (2).mp3";
+      }
+      else if (name>=183 && name<244)
+      {
+        name=name-183;
+        audio.src = "sounds/" + name + " (mp3cut.net) - copia (3).mp3";
+      }
       audios.push(audio);
-      primer.push(false);
 }
+
 async function MusicMaker(So)
 {
-  if(audios[So].readyState==4)
-  {
+    if(repro[So]==0){
+      repro[So]=1;
     audios[So].playbackRate = 3;
     audios[So].play();
-  }
+    }
+    else if(repro[So]==1){
+      repro[So]=2;
+      So=parseInt(So)+61;
+    audios[So].playbackRate = 3;
+    audios[So].play();
+
+    }
+    else if(repro[So]==2){
+      repro[So]=3;
+      So=parseInt(So)+122;
+    audios[So].playbackRate = 3;
+    audios[So].play();
+    }
+    else if(repro[So]==3){
+      repro[So]=0;
+      So=parseInt(So)+183;
+    audios[So].playbackRate = 3;
+    audios[So].play();
+    }
+    sleepi(700);
 }
 
 function sleepi(milliseconds) {

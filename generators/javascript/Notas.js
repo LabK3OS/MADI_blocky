@@ -30,5 +30,6 @@ goog.require('Blockly.JavaScript');
 
 Blockly.JavaScript['play_sound'] = function(block) {
   var value = '\'' + block.getFieldValue('VALUE') + '\'';
-  return 'MusicMaker(' + value + ');\n';
+  var dropdown_tiempo = block.getFieldValue('Tiempo');
+  return 'MusicMaker(' + value + ',' + dropdown_tiempo + ');\nsleepi(' + dropdown_tiempo + ');\n';
 };
