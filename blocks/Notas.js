@@ -108,6 +108,14 @@ Blockly.defineBlocksWithJsonArray([
           ["Negra","4"],
           ["Corchea","8"]
         ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "Seguida",
+        "checked": false
       }
     ],
     "previousStatement": null,

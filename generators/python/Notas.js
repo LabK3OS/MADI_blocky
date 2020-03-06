@@ -9,6 +9,7 @@ Blockly.Python['play_sound'] = function(block) {
   var dropdown_value = block.getFieldValue('VALUE');
   // TODO: Assemble Python into code variable.
   var dropdown_tiempo = block.getFieldValue('Tiempo');
+  var checkbox_seguida = block.getFieldValue('Seguida') == 'FALSE';
   var code = '...\n';
   return code;
 };
