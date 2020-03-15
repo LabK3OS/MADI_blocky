@@ -6,7 +6,7 @@ goog.provide('Blockly.JavaScript.Musica');
 goog.require('Blockly.JavaScript');
 
 Blockly.JavaScript['Musica'] = function(block) {
-  var dropdown_nota = block.getFieldValue('Notas');
+  var dropdown_nota = block.getFieldValue('Nota');
   var dropdown_name = block.getFieldValue('Tempo');
   var checkbox_name = block.getFieldValue('Combi') == 'TRUE';
   // TODO: Assemble JavaScript into code variable.
