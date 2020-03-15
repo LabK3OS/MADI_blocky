@@ -843,7 +843,7 @@ function AddNote(name) {
       audios.push(audio);
 }
 
-async function MusicMaker(So)
+async function MusicMaker(So,tempo,combi)
 {
     if(repro[So]==0){
       repro[So]=1;
