@@ -79,7 +79,7 @@ Blockly.Blocks['Musica'] = {
           ["Corchea","8"]
         ]), "Tempo");
     this.appendDummyInput()
-        .appendField("Combinado")
+        .appendField("Combinado con ↓")
         .appendField(new Blockly.FieldCheckbox("TRUE"), "Combi");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

@@ -494,6 +494,7 @@ Code.runJS = function() {
   var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
+    alert(code);
     eval(code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
@@ -845,31 +846,73 @@ function AddNote(name) {
 
 async function MusicMaker(So,tempo,combi)
 {
+  var tempo1;
+  tempo1=parseFloat(tempo);
+  var ma=null;
+  var can = 0;
+  tempo=tempo*3;
+  if(tempo==24)
+  {
+    tempo=16;
+  }
+  while(tempo1!=1)
+  {
+    if(tempo1>1)
+    {
+      ma=true;
+      tempo1=tempo1/2;
+      can=can+1;
+    }
+    else{
+      ma=false;
+      tempo1=tempo1*2;
+      can=can+1;
+    }
+  }
+  if(ma==true)
+  {
+    if(combi==true)
+    {
+      tempo1=0;
+    }
+    else{
+    tempo1=(tempo1/(Math.pow(2,can)))*1000;
+  }
+  }
+  else {
+    if(combi==true)
+    {
+      tempo1=0;
+    }
+    else{
+    tempo1=(tempo1*(Math.pow(2,can)))*1000;
+  }
+  }
     if(repro[So]==0){
       repro[So]=1;
-    audios[So].playbackRate = 3;
+    audios[So].playbackRate = tempo;
     audios[So].play();
     }
     else if(repro[So]==1){
       repro[So]=2;
       So=parseInt(So)+61;
-    audios[So].playbackRate = 3;
+    audios[So].playbackRate = tempo;
     audios[So].play();
 
     }
     else if(repro[So]==2){
       repro[So]=3;
       So=parseInt(So)+122;
-    audios[So].playbackRate = 3;
+    audios[So].playbackRate = tempo;
     audios[So].play();
     }
     else if(repro[So]==3){
       repro[So]=0;
       So=parseInt(So)+183;
-    audios[So].playbackRate = 3;
+    audios[So].playbackRate = tempo;
     audios[So].play();
     }
-    sleepi(700);
+    sleepi(tempo1);
 }
 
 function sleepi(milliseconds) {
