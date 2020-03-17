@@ -8,7 +8,7 @@ goog.require('Blockly.JavaScript');
 
 Blockly.JavaScript['tiempo'] = function(block) {
 
-  return;
+  return '\n';
 
 };
 
@@ -23,7 +23,7 @@ Blockly.JavaScript['esperar'] = function(block) {
 Blockly.JavaScript['esperar_ms'] = function(block) {
   var value_esperar_ms = Blockly.JavaScript.valueToCode(block, 'Esperar_ms', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = 'sleepi(' + value_esperar + ');\n';
+  var code = 'sleepi(' + value_esperar_ms + ');\n';
   return code;
 };
 
