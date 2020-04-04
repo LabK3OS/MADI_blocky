@@ -9,7 +9,7 @@ goog.require('Blockly');
 Blockly.Blocks['tiempo'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Tiempo");
+        .appendField("Importar Tiempo");
     this.setColour(30);
  this.setTooltip("");
  this.setHelpUrl("");

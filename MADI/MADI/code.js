@@ -777,7 +777,7 @@ function correccion(arr) {
 
 function enviar() {
     Blockly.Python.INFINITE_LOOP_TRAP = null;
-    var code = toUTF8Array(Blockly.Python.workspaceToCode(workspace));
+    var code = toUTF8Array(Blockly.Python.workspaceToCode(Code.workspace));
 
     var dest_fname = "main.py";
     put_file_data = new Uint8Array(code);
