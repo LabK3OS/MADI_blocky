@@ -4,13 +4,22 @@ goog.provide('Blockly.Python.TOUCH');
 
 goog.require('Blockly.Python');
 
-Blockly.Python['touch'] = function(block) {
-  var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
-  var value_touchp = Blockly.Python.valueToCode(block, 'Touchp', Blockly.Python.ORDER_ATOMIC);
+
+Blockly.Python['import_touch'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'from machine import TouchPad\n'+variable_name+' = TouchPad(Pin('+value_touchp+'))';
+  var code = 'from machine import TouchPad\n';
   return code;
 };
+
+
+Blockly.Python['touch_pin'] = function(block) {
+  var variable_variable = Blockly.Python.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
+  var dropdown_pin = block.getFieldValue('Pin');
+  // TODO: Assemble Python into code variable.
+  var code = variable_variable + '= TouchPad(Pin(' + dropdown_pin + '))\n';
+  return code;
+};
+
 
 Blockly.Python['read_touch'] = function(block) {
   var value_read = Blockly.Python.valueToCode(block, 'Read', Blockly.Python.ORDER_ATOMIC);

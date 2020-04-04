@@ -25,15 +25,13 @@ Blockly.Blocks['i2c_mpu'] = {
     this.appendDummyInput()
         .appendField("Scl")
         .appendField(new Blockly.FieldDropdown([
-          ["option","OPTIONNAME"],
-          ["option","OPTIONNAME"],
-          ["option","OPTIONNAME"]
+          ["SCL","22"],
+          ["",""]
         ]), "SCL")
         .appendField("Sda")
         .appendField(new Blockly.FieldDropdown([
-          ["option","OPTIONNAME"],
-          ["option","OPTIONNAME"],
-          ["option","OPTIONNAME"]
+          ["SDA","21"],
+          ["",""]
         ]), "SDA");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
