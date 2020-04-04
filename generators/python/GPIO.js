@@ -6,7 +6,7 @@ goog.require('Blockly.Python');
 
 Blockly.Python['pin'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code = 'from machine import Pin\n';
+  var code = 'from machine import I2C, Pin\n';
   return code;
 };
 
@@ -17,7 +17,7 @@ Blockly.Python['gpio_in'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = '+dropdown_resistor+';
 	if(block.getFieldValue('Resistor') == "WITHOUT") {
-	 code = 'from machine import Pin\n'+variable_name+'=Pin('+value_num_pin+', Pin.IN)\n'; 
+	 code = 'from machine import Pin\n'+variable_name+'=Pin('+value_num_pin+', Pin.IN)\n';
 	}
 	else {
 	 code = ''+variable_name+'=Pin('+value_num_pin+', Pin.IN,Pin.PULL_'+dropdown_resistor+')\n';
