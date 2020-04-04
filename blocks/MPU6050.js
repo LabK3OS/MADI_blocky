@@ -20,6 +20,9 @@ Blockly.Blocks['import_mpu'] = {
 Blockly.Blocks['i2c_mpu'] = {
   init: function() {
     this.appendDummyInput()
+        .appendField("Variable")
+        .appendField(new Blockly.FieldVariable("MPU"), "Variable");
+    this.appendDummyInput()
         .appendField("Scl")
         .appendField(new Blockly.FieldDropdown([
           ["option","OPTIONNAME"],
@@ -32,9 +35,6 @@ Blockly.Blocks['i2c_mpu'] = {
           ["option","OPTIONNAME"],
           ["option","OPTIONNAME"]
         ]), "SDA");
-    this.appendDummyInput()
-        .appendField("Variable")
-        .appendField(new Blockly.FieldVariable("MPU"), "Variable");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(70);
