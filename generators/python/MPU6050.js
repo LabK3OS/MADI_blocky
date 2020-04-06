@@ -5,17 +5,15 @@ goog.provide('Blockly.Python.MPU6050');
 goog.require('Blockly.Python');
 
 
-Blockly.Python['import_mpu'] = function(block) {
-  // TODO: Assemble Python into code variable.
-  var code = 'import mpu6050\n';
-  return code;
-};
 
 
 Blockly.Python['i2c_mpu'] = function(block) {
   var dropdown_scl = block.getFieldValue('SCL');
   var dropdown_sda = block.getFieldValue('SDA');
   var variable_variable = Blockly.Python.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
+  Blockly.Python.definitions_['import_mpu'] = 'import mpu6050';
+  Blockly.Python.definitions_['import_pin'] = 'from machine import Pin';
+  Blockly.Python.definitions_['import_i2c'] = 'from machine import I2C';
   // TODO: Assemble Python into code variable.
   var code = 'i2c = I2C(scl=Pin(' + dropdown_scl + '), sda=Pin(' + dropdown_sda + '))\n' + variable_variable + ' = mpu6050.accel(i2c)\n';
   return code;

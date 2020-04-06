@@ -6,11 +6,6 @@ goog.provide('Blockly.JavaScript.UltraSonico');
 goog.require('Blockly.JavaScript');
 
 
-Blockly.JavaScript['hc_sr04'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
 
 
 Blockly.JavaScript['sensor_ultrasonico'] = function(block) {

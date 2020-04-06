@@ -5,11 +5,6 @@ goog.provide('Blockly.JavaScript.MPU6050');
 
 goog.require('Blockly.JavaScript');
 
-Blockly.JavaScript['import_mpu'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
 
 
 Blockly.JavaScript['i2c_mpu'] = function(block) {

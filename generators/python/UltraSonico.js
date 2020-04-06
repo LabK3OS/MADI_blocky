@@ -5,15 +5,11 @@ goog.provide('Blockly.Python.UltraSonico');
 goog.require('Blockly.Python');
 
 
-Blockly.Python['hc_sr04'] = function(block) {
-  // TODO: Assemble Python into code variable.
-  var code = 'from hcsr04 import HCSR04\n';
-  return code;
-};
-
 
 Blockly.Python['sensor_ultrasonico'] = function(block) {
   var variable_sensor = Blockly.Python.variableDB_.getName(block.getFieldValue('Sensor'), Blockly.Variables.NAME_TYPE);
+  Blockly.Python.definitions_['import_hcsr04'] = 'from hcsr04 import HCSR04';
+  Blockly.Python.definitions_['import_pin'] = 'from machine import Pin';
   var dropdown_trig = block.getFieldValue('Trig');
   var dropdown_echo = block.getFieldValue('Echo');
   // TODO: Assemble Python into code variable.

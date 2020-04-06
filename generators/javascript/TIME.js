@@ -6,11 +6,6 @@ goog.provide('Blockly.JavaScript.TIME');
 goog.require('Blockly.JavaScript');
 
 
-Blockly.JavaScript['tiempo'] = function(block) {
-
-  return '\n';
-
-};
 
 Blockly.JavaScript['esperar'] = function(block) {
   var value_esperar = Blockly.JavaScript.valueToCode(block, 'Esperar', Blockly.JavaScript.ORDER_ATOMIC);

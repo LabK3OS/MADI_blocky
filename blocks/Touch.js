@@ -7,15 +7,6 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
 
-Blockly.Blocks['import_touch'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Importar TouchPad");
-    this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 Blockly.Blocks['touch_pin'] = {
   init: function() {
@@ -61,10 +52,11 @@ Blockly.Blocks['conf_touch'] = {
   init: function() {
     this.appendValueInput("Config")
         .setCheck("String")
-        .appendField("Config Touch");
-    this.appendValueInput("Value")
-        .setCheck("Number")
-        .appendField("Value");
+        .appendField("Config. Touch");
+    this.appendDummyInput()
+        .appendField("Sensibilidad")
+        .appendField(new Blockly.FieldNumber(600, 100, 1000), "Value");
+    this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);

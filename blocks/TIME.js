@@ -6,15 +6,6 @@ goog.provide('Blockly.Constants.TIME');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Blocks['tiempo'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Importar Tiempo");
-    this.setColour(30);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 //esperar N segundos
 Blockly.Blocks['esperar'] = {

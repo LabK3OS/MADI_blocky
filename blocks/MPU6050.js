@@ -7,15 +7,6 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
 
-Blockly.Blocks['import_mpu'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Importar MPU6050");
-    this.setColour(70);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 Blockly.Blocks['i2c_mpu'] = {
   init: function() {

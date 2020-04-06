@@ -8,15 +8,6 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
 
-Blockly.Blocks['hc_sr04'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Importar HC-SR04");
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 
 Blockly.Blocks['sensor_ultrasonico'] = {
