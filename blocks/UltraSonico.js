@@ -23,19 +23,15 @@ Blockly.Blocks['sensor_ultrasonico'] = {
           ["GPIO13","13"],
           ["GPIO14","14"],
           ["GPIO15","15"],
-          ["GPIO16","16"],
-          ["GPIO17","17"],
           ["GPIO25","25"],
           ["GPIO26","26"],
           ["GPIO27","27"],
           ["GPIO32","32"],
           ["GPIO33","33"],
-          ["GPIO34","34"],
           ["GPIO35","35"],
           ["GPIO36","36"],
           ["GPIO37","37"],
-          ["GPIO38","38"],
-          ["GPIO39","39"]
+          ["GPIO38","38"]
         ]), "Trig")
         .appendField("Echo")
         .appendField(new Blockly.FieldDropdown([
@@ -44,19 +40,15 @@ Blockly.Blocks['sensor_ultrasonico'] = {
           ["GPIO13","13"],
           ["GPIO14","14"],
           ["GPIO15","15"],
-          ["GPIO16","16"],
-          ["GPIO17","17"],
           ["GPIO25","25"],
           ["GPIO26","26"],
           ["GPIO27","27"],
           ["GPIO32","32"],
           ["GPIO33","33"],
-          ["GPIO34","34"],
           ["GPIO35","35"],
           ["GPIO36","36"],
           ["GPIO37","37"],
-          ["GPIO38","38"],
-          ["GPIO39","39"]
+          ["GPIO38","38"]
         ]), "Echo");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
