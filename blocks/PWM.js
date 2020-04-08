@@ -50,7 +50,7 @@ Blockly.Blocks['conf_pwm'] = {
         .appendField("Hz");
     this.appendDummyInput()
         .appendField("Ciclo util")
-        .appendField(new Blockly.FieldNumber(50, 1, 99, 0.1), "Duty")
+        .appendField(new Blockly.FieldNumber(50, 1, 99.9, 0.1), "Duty")
         .appendField("%");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
