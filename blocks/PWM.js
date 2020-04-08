@@ -60,3 +60,17 @@ Blockly.Blocks['conf_pwm'] = {
  this.setHelpUrl("");
   }
 };
+
+
+Blockly.Blocks['stop_pwm'] = {
+  init: function() {
+    this.appendValueInput("Variable")
+        .setCheck(null)
+        .appendField("Detener PWM");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
