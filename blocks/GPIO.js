@@ -7,41 +7,71 @@ goog.provide('Blockly.Constants.GPIO');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Blocks['pin'] = {
+
+
+Blockly.Blocks['pin_in'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("PIN");
+        .appendField("Variable")
+        .appendField(new Blockly.FieldVariable("Entrada"), "Variable");
+    this.appendDummyInput()
+        .appendField("Resistencia")
+        .appendField(new Blockly.FieldDropdown([
+          ["Down","DOWN"],
+          ["Up","UP"],
+          ["Sin Resistencia","WITHOUT"]
+        ]), "Resistor");
+    this.appendDummyInput()
+        .appendField("Pin De Entrada")
+        .appendField(new Blockly.FieldDropdown([
+          ["GPIO4","4"],
+          ["GPIO12","12"],
+          ["GPIO13","13"],
+          ["GPIO14","14"],
+          ["GPIO15","15"],
+          ["GPIO25","25"],
+          ["GPIO26","26"],
+          ["GPIO27","27"],
+          ["GPIO32","32"],
+          ["GPIO33","33"],
+          ["GPIO35","35"],
+          ["GPIO36","36"],
+          ["GPIO37","37"],
+          ["GPIO38","38"]
+        ]), "Pin");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(0);
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
 
-Blockly.Blocks['gpio_in'] = {
+Blockly.Blocks['pin_out'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Pin as IN");
+        .appendField("Variable")
+        .appendField(new Blockly.FieldVariable("Salida"), "Variable");
     this.appendDummyInput()
-        .appendField("Resistor")
-        .appendField(new Blockly.FieldDropdown([["UP","UP"], ["DOWN","DOWN"], ["WITHOUT","WITHOUT"]]), "Resistor");
-    this.appendValueInput("NUM_PIN")
-        .setCheck("Number")
-        .appendField("Num Pin")
-        .appendField(new Blockly.FieldVariable("item"), "Name");
-    this.setColour(0);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['gpio_out'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Pin as OUT");
-    this.appendValueInput("NUM_PIN")
-        .setCheck("Number")
-        .appendField("Num Pin")
-        .appendField(new Blockly.FieldVariable("item"), "Name");
+        .appendField("Pin De Salida")
+        .appendField(new Blockly.FieldDropdown([
+          ["GPIO4","4"],
+          ["GPIO12","12"],
+          ["GPIO13","13"],
+          ["GPIO14","14"],
+          ["GPIO15","15"],
+          ["GPIO25","25"],
+          ["GPIO26","26"],
+          ["GPIO27","27"],
+          ["GPIO32","32"],
+          ["GPIO33","33"],
+          ["GPIO35","35"],
+          ["GPIO36","36"],
+          ["GPIO37","37"],
+          ["GPIO38","38"]
+        ]), "Pin");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(0);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -50,12 +80,16 @@ Blockly.Blocks['gpio_out'] = {
 
 Blockly.Blocks['value_out'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField("Value")
-        .appendField(new Blockly.FieldDropdown([["HIGH","H"], ["LOW","L"]]), "Value");
     this.appendValueInput("Pin")
-        .setCheck("String")
-        .appendField("Pin");
+        .setCheck(null)
+        .appendField("Pin De Salida");
+    this.appendDummyInput()
+        .appendField("Valor")
+        .appendField(new Blockly.FieldDropdown([
+          ["Encender","1"],
+          ["Apagar","0"]
+        ]), "Value");
+    this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);
@@ -65,3 +99,14 @@ Blockly.Blocks['value_out'] = {
 };
 
 
+Blockly.Blocks['value_in'] = {
+  init: function() {
+    this.appendValueInput("Value")
+        .setCheck(null)
+        .appendField("Leer PIN");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
