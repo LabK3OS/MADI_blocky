@@ -940,13 +940,13 @@ function comprobador_de_pines() {
   pines.forEach(function(numero){
     repetidos[numero] = (repetidos[numero] || 0) + 1;
   });
-  var mensaje_error = "";
+  var mensaje_error = "ERROR\n\n";
   var pasa = false;
   for(var i=0;i<pin_out.length;i++)
   {
     if(repetidos[pin_out[i]]>1)
     {
-      mensaje_error = mensaje_error + "El PIN " + i + " Esta siendo usado " + repetidos[pin_out[i]] + " veces, revisar que los siguientes Pines no esten repetidos => " + pre_mensa[i] + "\n";
+      mensaje_error = mensaje_error + "- El PIN " + pin_out[i] + " (" + pre_mensa[i] + ") Esta siendo usado " + repetidos[pin_out[i]] + " veces\n";
       pasa=true;
     }
   }
