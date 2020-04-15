@@ -334,7 +334,6 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
  */
 Code.init = function() {
   Code.initLanguage();
-
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
   var onresize = function(e) {
@@ -543,9 +542,9 @@ var workspace = Blockly.inject(blocklyDiv,
 function Desc()
 {
   Blockly.Python.INFINITE_LOOP_TRAP = null;
-  var code = Blockly.Python.workspaceToCode(workspace);
+  var code = Blockly.Python.workspaceToCode(Code.workspace);
   alert(code);
-  var code1 = Blockly.Python.workspaceToCode(workspace);
+  var code1 = Blockly.Python.workspaceToCode(Code.workspace);
   Descargar(code1);
   //Code.attemptCodeGeneration(Blockly.Python, 'py',1);
 }
@@ -808,6 +807,9 @@ function enviar() {
 
 var repro=[];
 var audios = [];
+var pines = [];
+var pre_mensa = ["CLC1/GPIO0/ADC2_1/TOUCH1/BOTTON","CS/GPIO2/ADC2_2/HSPI_WP/TOUCH2","GPIO4/ADC2_0/HSPI_HD/TOUCH0","GPIO5/V_SPI_CS0/LED","GPIO12/ADC2_5/HSPI_Q/TOUCH5","GPIO13/ADC2_4/HSP_ID/TOUCH4","GPIO14/ADC2_6/HSPI_CLK/TOUCH6","GPIO15/ADC2_3/HSPI_CS0/TOUCH3","GPIO16/U2_RXD","GPIO17/U2_TXD","SCK/GPIO18/V_SPI_CLK","MISO/GPIO19/V_SPI_Q/U0_CTS","SDA/GPIO21/V_SPI_HD","SCL/GPIO22/V_SPI_WP/U0_RTS","MOSI/GPIO23/V_SPI_D","GPIO25/ADC2_8/DAC1","GPIO26/ADC2_9/DAC2","GPIO27/ADC2_7/TOUCH7","XTAL32/GPIO32/ADC1_4/TOUCH9","XTAL32/GPIO33/ADC1_5/TOUCH8","GPIO34/ADC1_6/VDET1","GPIO35/ADC1_7/VDET2","SENSEVP/GPIO36/ADC1_0","CAPVP/GPIO37/ADC1_1","CAPVN/GPIO38/ADC1_2","SENSVN/GPIO39/ADC1_3"];
+var pin_out = [0,2,4,5,12,13,14,15,16,17,18,19,21,22,23,25,26,27,32,33,34,35,36,37,38,39];
 var primer = [];
 var loading = 0;
 for(var i=0;i<244;i++)
@@ -921,4 +923,39 @@ function sleepi(milliseconds) {
   do {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
+}
+
+function iniciador_de_pines() {
+  pines = [];
+}
+
+function guardador_de_pines(pin) {
+  pines.push(parseInt(pin));
+}
+
+function comprobador_de_pines() {
+  var repetidos = {};
+  var repetidos2 = [];
+  pines.forEach(function(numero){
+    repetidos[numero] = (repetidos[numero] || 0) + 1;
+  });
+  var mensaje_error = "";
+  var pasa = false;
+  for(var i=0;i<pin_out.length;i++)
+  {
+    if(repetidos[pin_out[i]]>1)
+    {
+      mensaje_error = mensaje_error + "El PIN " + i + "Esta siendo usado " + repetidos[pin_out[i]] + "veces, revisar que los siguientes Pines no esten repetidos =>" + pre_mensa[i] + "\n";
+      pasa=true;
+    }
+  }
+  if(pasa)
+  {
+    alert(mensaje_error);
+    return false;
+  }
+  else {
+    alert("Correcto");
+    return true;
+  }
 }
