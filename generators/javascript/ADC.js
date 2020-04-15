@@ -10,8 +10,9 @@ goog.require('Blockly.JavaScript');
 Blockly.JavaScript['adc_pin'] = function(block) {
   var variable_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
   var dropdown_pin = block.getFieldValue('Pin');
+  Blockly.JavaScript.definitions_['iniciador'] = 'iniciador_de_pines()';
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
+  var code = 'guardador_de_pines(' + dropdown_pin + ');\n';
   return code;
 };
 

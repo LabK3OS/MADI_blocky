@@ -493,8 +493,9 @@ Code.runJS = function() {
   var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-    alert(code);
+    //alert(code);
     eval(code);
+    comprobador_de_pines();
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }
@@ -945,17 +946,15 @@ function comprobador_de_pines() {
   {
     if(repetidos[pin_out[i]]>1)
     {
-      mensaje_error = mensaje_error + "El PIN " + i + "Esta siendo usado " + repetidos[pin_out[i]] + "veces, revisar que los siguientes Pines no esten repetidos =>" + pre_mensa[i] + "\n";
+      mensaje_error = mensaje_error + "El PIN " + i + " Esta siendo usado " + repetidos[pin_out[i]] + " veces, revisar que los siguientes Pines no esten repetidos => " + pre_mensa[i] + "\n";
       pasa=true;
     }
   }
   if(pasa)
   {
     alert(mensaje_error);
-    return false;
   }
   else {
     alert("Correcto");
-    return true;
   }
 }

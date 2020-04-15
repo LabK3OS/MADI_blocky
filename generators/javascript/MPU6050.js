@@ -8,11 +8,12 @@ goog.require('Blockly.JavaScript');
 
 
 Blockly.JavaScript['i2c_mpu'] = function(block) {
-  var dropdown_name = block.getFieldValue('SCL');
-  var dropdown_name = block.getFieldValue('SDA');
+  var dropdown_scl = block.getFieldValue('SCL');
+  var dropdown_sda = block.getFieldValue('SDA');
+  Blockly.JavaScript.definitions_['iniciador'] = 'iniciador_de_pines()';
   var variable_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
+  var code = 'guardador_de_pines(' + dropdown_scl + ');\nguardador_de_pines(' + dropdown_sda + ');\n';
   return code;
 };
 

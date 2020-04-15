@@ -12,8 +12,9 @@ Blockly.JavaScript['sensor_ultrasonico'] = function(block) {
   var variable_sensor = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('Sensor'), Blockly.Variables.NAME_TYPE);
   var dropdown_trig = block.getFieldValue('Trig');
   var dropdown_echo = block.getFieldValue('Echo');
+  Blockly.JavaScript.definitions_['iniciador'] = 'iniciador_de_pines()';
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
+  var code = 'guardador_de_pines(' + dropdown_trig + ');\nguardador_de_pines(' + dropdown_echo + ');\n';
   return code;
 };
 
