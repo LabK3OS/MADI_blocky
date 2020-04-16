@@ -29,3 +29,33 @@ Blockly.JavaScript['esperar_us'] = function(block) {
   var code = 'sleepi(' + value_esperar_us + ');\n';
   return code;
 };
+
+Blockly.JavaScript['conf_rtc'] = function(block) {
+  var variable_rtc = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('rtc'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+
+Blockly.JavaScript['set_date'] = function(block) {
+  var value_variable = Blockly.JavaScript.valueToCode(block, 'Variable', Blockly.JavaScript.ORDER_ATOMIC);
+  var number_ano = block.getFieldValue('Ano');
+  var dropdown_mes = block.getFieldValue('Mes');
+  var number_dia = block.getFieldValue('Dia');
+  var number_hora = block.getFieldValue('Hora');
+  var number_minuto = block.getFieldValue('Minuto');
+  var number_segundo = block.getFieldValue('Segundo');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+
+Blockly.JavaScript['read_rtc'] = function(block) {
+  var value_variable = Blockly.JavaScript.valueToCode(block, 'Variable', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
