@@ -9,7 +9,7 @@ Blockly.Python['esperar'] = function(block) {
   var value_esperar = Blockly.Python.valueToCode(block, 'Esperar', Blockly.Python.ORDER_ATOMIC);
   Blockly.Python.definitions_['import_time'] = 'import time';
   // TODO: Assemble Python into code variable.
-  var code = 'time.sleep('+value_esperar+')\n';
+  var code = 'time.sleep(' + value_esperar + ')\n';
   return code;
 };
 
