@@ -70,13 +70,13 @@ Blockly.Blocks['Musica'] = {
     this.appendDummyInput()
         .appendField("Tiempo")
         .appendField(new Blockly.FieldDropdown([
-          ["Maxima","8"],
-          ["Longa","4"],
-          ["Cuadrada","2"],
-          ["Redonda","1"],
-          ["Blanca","0.5"],
-          ["Negra","0.25"],
-          ["Corchea","0.125"]
+          ["8","8"],
+          ["4","4"],
+          ["2","2"],
+          ["1","1"],
+          ["1/2","0.5"],
+          ["1/4","0.25"],
+          ["1/8","0.125"]
         ]), "Tempo");
     this.appendDummyInput()
         .appendField("Combinado con ↓")
