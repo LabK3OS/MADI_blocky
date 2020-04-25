@@ -806,118 +806,11 @@ function enviar() {
     ws.send(rec);
 }
 
-var repro=[];
-var audios = [];
 var pines = [];
 var pre_mensa = ["CLC1/GPIO0/ADC2_1/TOUCH1/BOTTON","CS/GPIO2/ADC2_2/HSPI_WP/TOUCH2","GPIO4/ADC2_0/HSPI_HD/TOUCH0","GPIO5/V_SPI_CS0/LED","GPIO12/ADC2_5/HSPI_Q/TOUCH5","GPIO13/ADC2_4/HSP_ID/TOUCH4","GPIO14/ADC2_6/HSPI_CLK/TOUCH6","GPIO15/ADC2_3/HSPI_CS0/TOUCH3","GPIO16/U2_RXD","GPIO17/U2_TXD","SCK/GPIO18/V_SPI_CLK","MISO/GPIO19/V_SPI_Q/U0_CTS","SDA/GPIO21/V_SPI_HD","SCL/GPIO22/V_SPI_WP/U0_RTS","MOSI/GPIO23/V_SPI_D","GPIO25/ADC2_8/DAC1","GPIO26/ADC2_9/DAC2","GPIO27/ADC2_7/TOUCH7","XTAL32/GPIO32/ADC1_4/TOUCH9","XTAL32/GPIO33/ADC1_5/TOUCH8","GPIO34/ADC1_6/VDET1","GPIO35/ADC1_7/VDET2","SENSEVP/GPIO36/ADC1_0","CAPVP/GPIO37/ADC1_1","CAPVN/GPIO38/ADC1_2","SENSVN/GPIO39/ADC1_3"];
 var pin_out = [0,2,4,5,12,13,14,15,16,17,18,19,21,22,23,25,26,27,32,33,34,35,36,37,38,39];
-var primer = [];
-var loading = 0;
-for(var i=0;i<244;i++)
-{
-  AddNote(i);
-}
 
-function AddNote(name) {
-   loading++;
-   var audio = document.createElement("audio");
-   audio.loop = false;
-   audio.addEventListener("canplaythrough", function () {
-      loading--;},false);
-      if(name<61)
-      {
-      audio.src = "sounds/" + name + " (mp3cut.net).mp3";
-      repro.push(0);
-      }
-      else if (name>=61 && name<122)
-      {
-        name=name-61;
-        audio.src = "sounds/" + name + " (mp3cut.net) - copia.mp3";
-      }
-      else if (name>=122 && name<183)
-      {
-        name=name-122;
-        audio.src = "sounds/" + name + " (mp3cut.net) - copia (2).mp3";
-      }
-      else if (name>=183 && name<244)
-      {
-        name=name-183;
-        audio.src = "sounds/" + name + " (mp3cut.net) - copia (3).mp3";
-      }
-      audios.push(audio);
-}
-/*
-async function MusicMaker(So,tempo,combi)
-{
-  var tempo1;
-  tempo1=parseFloat(tempo);
-  var ma=null;
-  var can = 0;
-  tempo=tempo*3;
-  if(tempo==24)
-  {
-    tempo=16;
-  }
-  while(tempo1!=1)
-  {
-    if(tempo1>1)
-    {
-      ma=true;
-      tempo1=tempo1/2;
-      can=can+1;
-    }
-    else{
-      ma=false;
-      tempo1=tempo1*2;
-      can=can+1;
-    }
-  }
-  if(ma==true)
-  {
-    if(combi==true)
-    {
-      tempo1=0;
-    }
-    else{
-    tempo1=(tempo1/(Math.pow(2,can)))*1000;
-  }
-  }
-  else {
-    if(combi==true)
-    {
-      tempo1=0;
-    }
-    else{
-    tempo1=(tempo1*(Math.pow(2,can)))*1000;
-  }
-  }
-    if(repro[So]==0){
-      repro[So]=1;
-    audios[So].playbackRate = tempo;
-    audios[So].play();
-    }
-    else if(repro[So]==1){
-      repro[So]=2;
-      So=parseInt(So)+61;
-    audios[So].playbackRate = tempo;
-    audios[So].play();
 
-    }
-    else if(repro[So]==2){
-      repro[So]=3;
-      So=parseInt(So)+122;
-    audios[So].playbackRate = tempo;
-    audios[So].play();
-    }
-    else if(repro[So]==3){
-      repro[So]=0;
-      So=parseInt(So)+183;
-    audios[So].playbackRate = tempo;
-    audios[So].play();
-    }
-    sleepi(tempo1);
-}
-*/
 
 function MusicMaker(So,tempo,combi)
 {
@@ -926,7 +819,7 @@ function MusicMaker(So,tempo,combi)
   if(combi==false)
   {
     jsNota(frecuencia,tiempo);
-    tiempo=tiempo*1000;
+    tiempo=tiempo*500;
   }
   else
   {
@@ -940,8 +833,9 @@ function MusicMaker(So,tempo,combi)
 var context= new AudioContext();
 
 function jsNota(frecuencia,tempo){
+
         var o= context.createOscillator();
-        g=context.createGain();
+        var g=context.createGain();
         o.connect(g);
         o.type="sawtooth";
         o.frequency.value=frecuencia;
