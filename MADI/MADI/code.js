@@ -846,7 +846,7 @@ function AddNote(name) {
       }
       audios.push(audio);
 }
-
+/*
 async function MusicMaker(So,tempo,combi)
 {
   var tempo1;
@@ -917,6 +917,38 @@ async function MusicMaker(So,tempo,combi)
     }
     sleepi(tempo1);
 }
+*/
+
+function MusicMaker(So,tempo,combi)
+{
+  var frecuencia = parseFloat(So);
+  var tiempo = parseFloat(tempo);
+  if(combi==false)
+  {
+    jsNota(frecuencia,tiempo);
+    tiempo=tiempo*1000;
+  }
+  else
+  {
+    jsNota(frecuencia,tiempo);
+    tiempo=0;
+  }
+  sleepi(tiempo);
+}
+
+
+var context= new AudioContext();
+
+function jsNota(frecuencia,tempo){
+        var o= context.createOscillator();
+        g=context.createGain();
+        o.connect(g);
+        o.type="sawtooth";
+        o.frequency.value=frecuencia;
+        g.connect(context.destination);
+        o.start(0);
+        g.gain.exponentialRampToValueAtTime(0.00001,context.currentTime +tempo);
+    }
 
 function sleepi(milliseconds) {
   const date = Date.now();
