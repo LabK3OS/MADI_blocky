@@ -881,6 +881,11 @@ function comprobador_de_pines() {
     alert(mensaje_error);
   }
   else {
-    alert("Correcto");
+    //alert("Correcto");
   }
+}
+
+
+function highlightBlock(id) {
+  workspace.highlightBlock(id);
 }
