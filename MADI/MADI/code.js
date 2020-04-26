@@ -887,5 +887,5 @@ function comprobador_de_pines() {
 
 
 function highlightBlock(id) {
-  workspace.highlightBlock(id);
+  Code.workspace.highlightBlock(id);
 }
