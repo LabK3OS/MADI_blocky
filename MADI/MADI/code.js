@@ -884,3 +884,6 @@ function comprobador_de_pines() {
     //alert("Correcto");
   }
 }
+function highlightBlock(id) {
+  Code.workspace.highlightBlock(id);
+}
