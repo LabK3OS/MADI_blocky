@@ -86,7 +86,7 @@ Code.isRtl = function() {
 Code.loadBlocks = function(defaultXml) {
   try {
     var loadOnce = window.sessionStorage.loadOnceBlocks;
-  } catch(e) {
+  } catch (e) {
     // Firefox sometimes throws a SecurityError when accessing sessionStorage.
     // Restarting Firefox fixes this, so it looks like a bug.
     var loadOnce = null;
@@ -124,7 +124,7 @@ Code.changeLanguage = function() {
 
   var languageMenu = document.getElementById('languageMenu');
   var newLang = encodeURIComponent(
-      languageMenu.options[languageMenu.selectedIndex].value);
+    languageMenu.options[languageMenu.selectedIndex].value);
   var search = window.location.search;
   if (search.length <= 1) {
     search = '?lang=' + newLang;
@@ -135,7 +135,7 @@ Code.changeLanguage = function() {
   }
 
   window.location = window.location.protocol + '//' +
-      window.location.host + window.location.pathname + search;
+    window.location.host + window.location.pathname + search;
 };
 
 /**
@@ -213,7 +213,7 @@ Code.tabClick = function(clickedName) {
       xmlDom = Blockly.Xml.textToDom(xmlText);
     } catch (e) {
       var q =
-          window.confirm(MSG['badXml'].replace('%1', e));
+        window.confirm(MSG['badXml'].replace('%1', e));
       if (!q) {
         // Leave the user on the XML tab.
         return;
@@ -240,7 +240,7 @@ Code.tabClick = function(clickedName) {
   document.getElementById('tab_' + clickedName).className = 'tabon';
   // Show the selected pane.
   document.getElementById('content_' + clickedName).style.visibility =
-      'visible';
+    'visible';
   Code.renderContent();
   if (clickedName == 'blocks') {
     Code.workspace.setVisible(true);
@@ -291,14 +291,14 @@ Code.attemptCodeGeneration = function(generator, prettyPrintType, des) {
       //if(des == 0) {
       content.innerHTML = code;
       //else {
-        //content.outerHTML = code;
-        //content.outerText = content.outerHTML;
-        //var patron = "<div id=\"content_blocks\" class=\"content\" style=\"visibility: visible; top: 86px; left: 0px; height: 556px; width: 1301px;\">";
-        //var nun = "";
-        //var patron2 = "</div>"
-        //var nuevo = content.outerHTML.replace(patron,nun); //outerText
-        //nuevo = nuevo.replace(patron2,nun);
-        //Descargar(nuevo);
+      //content.outerHTML = code;
+      //content.outerText = content.outerHTML;
+      //var patron = "<div id=\"content_blocks\" class=\"content\" style=\"visibility: visible; top: 86px; left: 0px; height: 556px; width: 1301px;\">";
+      //var nun = "";
+      //var patron2 = "</div>"
+      //var nuevo = content.outerHTML.replace(patron,nun); //outerText
+      //nuevo = nuevo.replace(patron2,nun);
+      //Descargar(nuevo);
 
     }
   }
@@ -322,9 +322,9 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
 
   var valid = missingBlockGenerators.length == 0;
   if (!valid) {
-    var msg = 'The generator code for the following blocks not specified for '
-        + generator.name_ + ':\n - ' + missingBlockGenerators.join('\n - ');
-    Blockly.alert(msg);  // Assuming synchronous. No callback.
+    var msg = 'The generator code for the following blocks not specified for ' +
+      generator.name_ + ':\n - ' + missingBlockGenerators.join('\n - ');
+    Blockly.alert(msg); // Assuming synchronous. No callback.
   }
   return valid;
 };
@@ -352,8 +352,8 @@ Code.init = function() {
     // Make the 'Blocks' tab line up with the toolbox.
     if (Code.workspace && Code.workspace.toolbox_.width) {
       document.getElementById('tab_blocks').style.minWidth =
-          (Code.workspace.toolbox_.width - 38) + 'px';
-          // Account for the 19 pixel margin and on each side.
+        (Code.workspace.toolbox_.width - 38) + 'px';
+      // Account for the 19 pixel margin and on each side.
     }
   };
   window.addEventListener('resize', onresize, false);
@@ -375,22 +375,26 @@ Code.init = function() {
   // Construct the toolbox XML, replacing translated variable names.
   var toolboxText = document.getElementById('toolbox').outerHTML;
   toolboxText = toolboxText.replace(/(^|[^%]){(\w+)}/g,
-      function(m, p1, p2) {return p1 + MSG[p2];});
+    function(m, p1, p2) {
+      return p1 + MSG[p2];
+    });
   var toolboxXml = Blockly.Xml.textToDom(toolboxText);
 
-  Code.workspace = Blockly.inject('content_blocks',
-      {grid:
-          {spacing: 20,
-           length: 4,
-           colour: '#ccc',
-           snap: true},
-       media: '../../media/',
-       rtl: rtl,
-       toolbox: toolboxXml,
-       zoom:
-           {controls: true,
-            wheel: true}
-      });
+  Code.workspace = Blockly.inject('content_blocks', {
+    grid: {
+      spacing: 20,
+      length: 4,
+      colour: '#ccc',
+      snap: true
+    },
+    media: '../../media/',
+    rtl: rtl,
+    toolbox: toolboxXml,
+    zoom: {
+      controls: true,
+      wheel: true
+    }
+  });
 
   // Add to reserved word list: Local variables in execution environment (runJS)
   // and the infinite loop detection function.
@@ -406,7 +410,10 @@ Code.init = function() {
   Code.tabClick(Code.selected);
 
   Code.bindClick('trashButton',
-      function() {Code.discard(); Code.renderContent();});
+    function() {
+      Code.discard();
+      Code.renderContent();
+    });
   Code.bindClick('runButton', Code.runJS);
   // Disable the link button if page isn't backed by App Engine storage.
   var linkButton = document.getElementById('linkButton');
@@ -416,7 +423,9 @@ Code.init = function() {
     BlocklyStorage['HASH_ERROR'] = MSG['hashError'];
     BlocklyStorage['XML_ERROR'] = MSG['xmlError'];
     Code.bindClick(linkButton,
-        function() {BlocklyStorage.link(Code.workspace);});
+      function() {
+        BlocklyStorage.link(Code.workspace);
+      });
   } else if (linkButton) {
     linkButton.className = 'disabled';
   }
@@ -424,7 +433,11 @@ Code.init = function() {
   for (var i = 0; i < Code.TABS_.length; i++) {
     var name = Code.TABS_[i];
     Code.bindClick('tab_' + name,
-        function(name_) {return function() {Code.tabClick(name_);};}(name));
+      function(name_) {
+        return function() {
+          Code.tabClick(name_);
+        };
+      }(name));
   }
   onresize();
   Blockly.svgResize(Code.workspace);
@@ -509,7 +522,7 @@ Code.runJS = function() {
 Code.discard = function() {
   var count = Code.workspace.getAllBlocks(false).length;
   if (count < 2 ||
-      window.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count))) {
+    window.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count))) {
     Code.workspace.clear();
     if (window.location.hash) {
       window.location.hash = '';
@@ -542,8 +555,7 @@ var workspace = Blockly.inject(blocklyDiv,
     trashcan: true
   });
   */
-function Desc()
-{
+function Desc() {
   Blockly.Python.INFINITE_LOOP_TRAP = null;
   var code = Blockly.Python.workspaceToCode(Code.workspace);
   alert(code);
@@ -551,51 +563,52 @@ function Desc()
   Descargar(code1);
   //Code.attemptCodeGeneration(Blockly.Python, 'py',1);
 }
-function Descargar(code)
-{
-// grab the content of the form field and place it into a variable
-//  create a new Blob (html5 magic) that conatins the data from your form feild
 
-    var textFileAsBlob = new Blob([code], {type:'text/plain'});
-// Specify the name of the file to be saved
-    var fileNameToSaveAs = "main.py";
+function Descargar(code) {
+  // grab the content of the form field and place it into a variable
+  //  create a new Blob (html5 magic) that conatins the data from your form feild
 
-// Optionally allow the user to choose a file name by providing
-// an imput field in the HTML and using the collected data here
-// var fileNameToSaveAs = txtFileName.text;
+  var textFileAsBlob = new Blob([code], {
+    type: 'text/plain'
+  });
+  // Specify the name of the file to be saved
+  var fileNameToSaveAs = "main.py";
 
-// create a link for our script to 'click'
-    var downloadLink = document.createElement("a");
-//  supply the name of the file (from the var above).
-// you could create the name here but using a var
-// allows more flexability later.
-    downloadLink.download = fileNameToSaveAs;
-// provide text for the link. This will be hidden so you
-// can actually use anything you want.
-    downloadLink.innerHTML = "My Hidden Link";
+  // Optionally allow the user to choose a file name by providing
+  // an imput field in the HTML and using the collected data here
+  // var fileNameToSaveAs = txtFileName.text;
 
-// allow our code to work in webkit & Gecko based browsers
-// without the need for a if / else block.
-    window.URL = window.URL || window.webkitURL;
+  // create a link for our script to 'click'
+  var downloadLink = document.createElement("a");
+  //  supply the name of the file (from the var above).
+  // you could create the name here but using a var
+  // allows more flexability later.
+  downloadLink.download = fileNameToSaveAs;
+  // provide text for the link. This will be hidden so you
+  // can actually use anything you want.
+  downloadLink.innerHTML = "My Hidden Link";
 
-// Create the link Object.
-    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-// when link is clicked call a function to remove it from
-// the DOM in case user wants to save a second file.
-    downloadLink.onclick = destroyClickedElement;
-// make sure the link is hidden.
-    downloadLink.style.display = "none";
-// add the link to the DOM
-    document.body.appendChild(downloadLink);
+  // allow our code to work in webkit & Gecko based browsers
+  // without the need for a if / else block.
+  window.URL = window.URL || window.webkitURL;
 
-// click the new link
-    downloadLink.click();
+  // Create the link Object.
+  downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+  // when link is clicked call a function to remove it from
+  // the DOM in case user wants to save a second file.
+  downloadLink.onclick = destroyClickedElement;
+  // make sure the link is hidden.
+  downloadLink.style.display = "none";
+  // add the link to the DOM
+  document.body.appendChild(downloadLink);
+
+  // click the new link
+  downloadLink.click();
 }
 
-function destroyClickedElement(event)
-{
-// remove the link from the DOM
-    document.body.removeChild(event.target);
+function destroyClickedElement(event) {
+  // remove the link from the DOM
+  document.body.removeChild(event.target);
 }
 
 
@@ -606,245 +619,252 @@ var put_file_name = null;
 var put_file_data = null;
 var get_file_name = null;
 var get_file_data = null;
-var card_ip="ws://192.168.0.1:8266/";
+var card_ip = "ws://192.168.0.1:8266/";
 var puer = "8266";
 
-function Conectar(){
+function Conectar() {
   if (connected) {
-      ws.close();
+    ws.close();
   } else {
-      connected = true;
-      var cardIP = prompt("Ingrese la dirección IP de la tarjeta a programar", card_ip);
-      var puert = prompt("Ingrese el puerto de la tarjeta a programar", puer);
-      alert(`ws://${cardIP}:${puert}/`);
-      connect(cardIP,puert);
+    connected = true;
+    var cardIP = prompt("Ingrese la dirección IP de la tarjeta a programar", card_ip);
+    var puert = prompt("Ingrese el puerto de la tarjeta a programar", puer);
+    alert(`ws://${cardIP}:${puert}/`);
+    connect(cardIP, puert);
   }
 }
-var contra="1234";
-function connect(url,por) {
-    window.location.hash = url.substring(5);
-    ws = new WebSocket(`ws://${url}:${por}/`);
-    ws.binaryType = 'arraybuffer';
-    ws.onopen = function() {
+var contra = "1234";
 
-        var passw=prompt("Ingrese contraseña",contra);
-        ws.send(passw);
-        ws.send('\r');
-        ws.onmessage = function(event) {
-            if (event.data instanceof ArrayBuffer) {
-                var data = new Uint8Array(event.data);
-                switch (binary_state) {
-                    case 11:
-                        // first response for put
-                        if (decode_resp(data) == 0) {
-                            // send file data in chunks
-                            for (var offset = 0; offset < put_file_data.length; offset += 1024) {
-                                ws.send(put_file_data.slice(offset, offset + 1024));
-                            }
-                            binary_state = 12;
-                        }
-                        break;
-                    case 12:
-                        // final response for put
-                        binary_state = 0;
-                        alert("archivo enviado");
-                        break;
+function connect(url, por) {
+  window.location.hash = url.substring(5);
+  ws = new WebSocket(`ws://${url}:${por}/`);
+  ws.binaryType = 'arraybuffer';
+  ws.onopen = function() {
 
-                    case 21:
-                        // first response for get
-                        if (decode_resp(data) == 0) {
-                            binary_state = 22;
-                            var rec = new Uint8Array(1);
-                            rec[0] = 0;
-                            ws.send(rec);
-                        }
-                        break;
-                    case 22:
-                        // file data
-                        var sz = data[0] | (data[1] << 8);
-                        if (data.length == 2 + sz) {
-                            // we assume that the data comes in single chunks
-                            if (sz == 0) {
-                                // end of file
-                                binary_state = 23;
-                            } else {
-                                // accumulate incoming data to get_file_data
-                                var new_buf = new Uint8Array(get_file_data.length + sz);
-                                new_buf.set(get_file_data);
-                                new_buf.set(data.slice(2), get_file_data.length);
-                                get_file_data = new_buf;
-
-                                var rec = new Uint8Array(1);
-                                rec[0] = 0;
-                                ws.send(rec);
-                            }
-                        } else {
-                            binary_state = 0;
-                        }
-                        break;
-                    case 23:
-                        // final response
-                        if (decode_resp(data) == 0) {
-
-                            saveAs(new Blob([get_file_data], {type: "application/octet-stream"}), get_file_name);
-                        }
-                        binary_state = 0;
-                        break;
-                    case 31:
-                        // first (and last) response for GET_VER
-                        console.log('GET_VER', data);
-                        binary_state = 0;
-                        break;
-                }
+    var passw = prompt("Ingrese contraseña", contra);
+    ws.send(passw);
+    ws.send('\r');
+    ws.onmessage = function(event) {
+      if (event.data instanceof ArrayBuffer) {
+        var data = new Uint8Array(event.data);
+        switch (binary_state) {
+          case 11:
+            // first response for put
+            if (decode_resp(data) == 0) {
+              // send file data in chunks
+              for (var offset = 0; offset < put_file_data.length; offset += 1024) {
+                ws.send(put_file_data.slice(offset, offset + 1024));
               }
-            alert(event.data);
-        };
-    };
+              binary_state = 12;
+            }
+            break;
+          case 12:
+            // final response for put
+            binary_state = 0;
+            alert("archivo enviado");
+            break;
 
-    ws.onclose = function() {
-        connected = false;
-    }
+          case 21:
+            // first response for get
+            if (decode_resp(data) == 0) {
+              binary_state = 22;
+              var rec = new Uint8Array(1);
+              rec[0] = 0;
+              ws.send(rec);
+            }
+            break;
+          case 22:
+            // file data
+            var sz = data[0] | (data[1] << 8);
+            if (data.length == 2 + sz) {
+              // we assume that the data comes in single chunks
+              if (sz == 0) {
+                // end of file
+                binary_state = 23;
+              } else {
+                // accumulate incoming data to get_file_data
+                var new_buf = new Uint8Array(get_file_data.length + sz);
+                new_buf.set(get_file_data);
+                new_buf.set(data.slice(2), get_file_data.length);
+                get_file_data = new_buf;
+
+                var rec = new Uint8Array(1);
+                rec[0] = 0;
+                ws.send(rec);
+              }
+            } else {
+              binary_state = 0;
+            }
+            break;
+          case 23:
+            // final response
+            if (decode_resp(data) == 0) {
+
+              saveAs(new Blob([get_file_data], {
+                type: "application/octet-stream"
+              }), get_file_name);
+            }
+            binary_state = 0;
+            break;
+          case 31:
+            // first (and last) response for GET_VER
+            console.log('GET_VER', data);
+            binary_state = 0;
+            break;
+        }
+      }
+      alert(event.data);
+    };
+  };
+
+  ws.onclose = function() {
+    connected = false;
+  }
 }
 
 function decode_resp(data) {
-    if (data[0] == 'W'.charCodeAt(0) && data[1] == 'B'.charCodeAt(0)) {
-        var code = data[2] | (data[3] << 8);
-        return code;
-    } else {
-        return -1;
-    }
+  if (data[0] == 'W'.charCodeAt(0) && data[1] == 'B'.charCodeAt(0)) {
+    var code = data[2] | (data[3] << 8);
+    return code;
+  } else {
+    return -1;
+  }
 }
 
 function toUTF8Array(str) {
-    var utf8 = [];
-    for (var i=0; i < str.length; i++) {
-        var charcode = str.charCodeAt(i);
-        if (charcode < 0x80) utf8.push(charcode);
-        else if (charcode < 0x800) {
-            utf8.push(0xc0 | (charcode >> 6),
-                      0x80 | (charcode & 0x3f));
-        }
-        else if (charcode < 0xd800 || charcode >= 0xe000) {
-            utf8.push(0xe0 | (charcode >> 12),
-                      0x80 | ((charcode>>6) & 0x3f),
-                      0x80 | (charcode & 0x3f));
-        }
-        // surrogate pair
-        else {
-            i++;
-            charcode = ((charcode&0x3ff)<<10)|(str.charCodeAt(i)&0x3ff)
-            utf8.push(0xf0 | (charcode >>18),
-                      0x80 | ((charcode>>12) & 0x3f),
-                      0x80 | ((charcode>>6) & 0x3f),
-                      0x80 | (charcode & 0x3f));
-        }
+  var utf8 = [];
+  for (var i = 0; i < str.length; i++) {
+    var charcode = str.charCodeAt(i);
+    if (charcode < 0x80) utf8.push(charcode);
+    else if (charcode < 0x800) {
+      utf8.push(0xc0 | (charcode >> 6),
+        0x80 | (charcode & 0x3f));
+    } else if (charcode < 0xd800 || charcode >= 0xe000) {
+      utf8.push(0xe0 | (charcode >> 12),
+        0x80 | ((charcode >> 6) & 0x3f),
+        0x80 | (charcode & 0x3f));
     }
-    return utf8;
+    // surrogate pair
+    else {
+      i++;
+      charcode = ((charcode & 0x3ff) << 10) | (str.charCodeAt(i) & 0x3ff)
+      utf8.push(0xf0 | (charcode >> 18),
+        0x80 | ((charcode >> 12) & 0x3f),
+        0x80 | ((charcode >> 6) & 0x3f),
+        0x80 | (charcode & 0x3f));
+    }
+  }
+  return utf8;
 }
 
 function correccion(arr) {
-    var j=0;
-    var can=0;
-    var arr2 = [];
-    var mem=0;
-    var i2=0;
-    for (var i = 0; i < arr.length; ++i) {
-        j=0;
-        if(arr[i]==32){
-          while(arr[i]==32) {
-              j++;
-              i++;
-          }
-          i=i-j;
-          if(j%2==0 && j!=1){
-              can=j*2;
-              for (var z = 0; z < can; z++) {
-                  arr2[i+mem+z]=32;
-              }
-              i=i+j-1;
-              mem=can+mem-j;
-          }
-          else{
-            for (var z = 0; z < j; z++) {
-                arr2[i+mem+z]=32;
-            }
-          }
+  var j = 0;
+  var can = 0;
+  var arr2 = [];
+  var mem = 0;
+  var i2 = 0;
+  for (var i = 0; i < arr.length; ++i) {
+    j = 0;
+    if (arr[i] == 32) {
+      while (arr[i] == 32) {
+        j++;
+        i++;
+      }
+      i = i - j;
+      if (j % 2 == 0 && j != 1) {
+        can = j * 2;
+        for (var z = 0; z < can; z++) {
+          arr2[i + mem + z] = 32;
         }
-        else {
-            arr2[i+mem]=arr[i];
+        i = i + j - 1;
+        mem = can + mem - j;
+      } else {
+        for (var z = 0; z < j; z++) {
+          arr2[i + mem + z] = 32;
         }
+      }
+    } else {
+      arr2[i + mem] = arr[i];
     }
-    put_file_data=new Uint8Array(arr2);
+  }
+  put_file_data = new Uint8Array(arr2);
 }
 
 function enviar() {
-    Blockly.Python.INFINITE_LOOP_TRAP = null;
-    var code = toUTF8Array(Blockly.Python.workspaceToCode(Code.workspace));
+  Blockly.Python.INFINITE_LOOP_TRAP = null;
+  var code = toUTF8Array(Blockly.Python.workspaceToCode(Code.workspace));
 
-    var dest_fname = "main.py";
-    put_file_data = new Uint8Array(code);
-    correccion(put_file_data);
-    var dest_fsize = put_file_data.length;
+  var dest_fname = "main.py";
+  put_file_data = new Uint8Array(code);
+  correccion(put_file_data);
+  var dest_fsize = put_file_data.length;
 
-    // WEBREPL_FILE = "<2sBBQLH64s"
-    var rec = new Uint8Array(2 + 1 + 1 + 8 + 4 + 2 + 64);
-    rec[0] = 'W'.charCodeAt(0);
-    rec[1] = 'A'.charCodeAt(0);
-    rec[2] = 1; // put
-    rec[3] = 0;
-    rec[4] = 0; rec[5] = 0; rec[6] = 0; rec[7] = 0; rec[8] = 0; rec[9] = 0; rec[10] = 0; rec[11] = 0;
-    rec[12] = dest_fsize & 0xff; rec[13] = (dest_fsize >> 8) & 0xff; rec[14] = (dest_fsize >> 16) & 0xff; rec[15] = (dest_fsize >> 24) & 0xff;
-    rec[16] = dest_fname.length & 0xff; rec[17] = (dest_fname.length >> 8) & 0xff;
-    for (var i = 0; i < 64; ++i) {
-        if (i < dest_fname.length) {
-            rec[18 + i] = dest_fname.charCodeAt(i);
-        } else {
-            rec[18 + i] = 0;
-        }
+  // WEBREPL_FILE = "<2sBBQLH64s"
+  var rec = new Uint8Array(2 + 1 + 1 + 8 + 4 + 2 + 64);
+  rec[0] = 'W'.charCodeAt(0);
+  rec[1] = 'A'.charCodeAt(0);
+  rec[2] = 1; // put
+  rec[3] = 0;
+  rec[4] = 0;
+  rec[5] = 0;
+  rec[6] = 0;
+  rec[7] = 0;
+  rec[8] = 0;
+  rec[9] = 0;
+  rec[10] = 0;
+  rec[11] = 0;
+  rec[12] = dest_fsize & 0xff;
+  rec[13] = (dest_fsize >> 8) & 0xff;
+  rec[14] = (dest_fsize >> 16) & 0xff;
+  rec[15] = (dest_fsize >> 24) & 0xff;
+  rec[16] = dest_fname.length & 0xff;
+  rec[17] = (dest_fname.length >> 8) & 0xff;
+  for (var i = 0; i < 64; ++i) {
+    if (i < dest_fname.length) {
+      rec[18 + i] = dest_fname.charCodeAt(i);
+    } else {
+      rec[18 + i] = 0;
     }
+  }
 
-    // initiate put
-    binary_state = 11;
-    ws.send(rec);
+  // initiate put
+  binary_state = 11;
+  ws.send(rec);
 }
 
 var pines = [];
-var pre_mensa = ["CLC1/GPIO0/ADC2_1/TOUCH1/BOTTON","CS/GPIO2/ADC2_2/HSPI_WP/TOUCH2","GPIO4/ADC2_0/HSPI_HD/TOUCH0","GPIO5/V_SPI_CS0/LED","GPIO12/ADC2_5/HSPI_Q/TOUCH5","GPIO13/ADC2_4/HSP_ID/TOUCH4","GPIO14/ADC2_6/HSPI_CLK/TOUCH6","GPIO15/ADC2_3/HSPI_CS0/TOUCH3","GPIO16/U2_RXD","GPIO17/U2_TXD","SCK/GPIO18/V_SPI_CLK","MISO/GPIO19/V_SPI_Q/U0_CTS","SDA/GPIO21/V_SPI_HD","SCL/GPIO22/V_SPI_WP/U0_RTS","MOSI/GPIO23/V_SPI_D","GPIO25/ADC2_8/DAC1","GPIO26/ADC2_9/DAC2","GPIO27/ADC2_7/TOUCH7","XTAL32/GPIO32/ADC1_4/TOUCH9","XTAL32/GPIO33/ADC1_5/TOUCH8","GPIO34/ADC1_6/VDET1","GPIO35/ADC1_7/VDET2","SENSEVP/GPIO36/ADC1_0","CAPVP/GPIO37/ADC1_1","CAPVN/GPIO38/ADC1_2","SENSVN/GPIO39/ADC1_3"];
-var pin_out = [0,2,4,5,12,13,14,15,16,17,18,19,21,22,23,25,26,27,32,33,34,35,36,37,38,39];
+var pre_mensa = ["CLC1/GPIO0/ADC2_1/TOUCH1/BOTTON", "CS/GPIO2/ADC2_2/HSPI_WP/TOUCH2", "GPIO4/ADC2_0/HSPI_HD/TOUCH0", "GPIO5/V_SPI_CS0/LED", "GPIO12/ADC2_5/HSPI_Q/TOUCH5", "GPIO13/ADC2_4/HSP_ID/TOUCH4", "GPIO14/ADC2_6/HSPI_CLK/TOUCH6", "GPIO15/ADC2_3/HSPI_CS0/TOUCH3", "GPIO16/U2_RXD", "GPIO17/U2_TXD", "SCK/GPIO18/V_SPI_CLK", "MISO/GPIO19/V_SPI_Q/U0_CTS", "SDA/GPIO21/V_SPI_HD", "SCL/GPIO22/V_SPI_WP/U0_RTS", "MOSI/GPIO23/V_SPI_D", "GPIO25/ADC2_8/DAC1", "GPIO26/ADC2_9/DAC2", "GPIO27/ADC2_7/TOUCH7", "XTAL32/GPIO32/ADC1_4/TOUCH9", "XTAL32/GPIO33/ADC1_5/TOUCH8", "GPIO34/ADC1_6/VDET1", "GPIO35/ADC1_7/VDET2", "SENSEVP/GPIO36/ADC1_0", "CAPVP/GPIO37/ADC1_1", "CAPVN/GPIO38/ADC1_2", "SENSVN/GPIO39/ADC1_3"];
+var pin_out = [0, 2, 4, 5, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, 36, 37, 38, 39];
 
 
 
-function MusicMaker(So,tempo,combi)
-{
+function MusicMaker(So, tempo, combi) {
   var frecuencia = parseFloat(So);
   var tiempo = parseFloat(tempo);
-  if(combi==false)
-  {
-    jsNota(frecuencia,tiempo);
-    tiempo=tiempo*500;
-  }
-  else
-  {
-    jsNota(frecuencia,tiempo);
-    tiempo=0;
+  if (combi == false) {
+    jsNota(frecuencia, tiempo);
+    tiempo = tiempo * 500;
+  } else {
+    jsNota(frecuencia, tiempo);
+    tiempo = 0;
   }
   sleepi(tiempo);
 }
 
 
-var context= new AudioContext();
+var context = new AudioContext();
 
-function jsNota(frecuencia,tempo){
+function jsNota(frecuencia, tempo) {
 
-        var o= context.createOscillator();
-        var g=context.createGain();
-        o.connect(g);
-        o.type="sawtooth";
-        o.frequency.value=frecuencia;
-        g.connect(context.destination);
-        o.start(0);
-        g.gain.exponentialRampToValueAtTime(0.00001,context.currentTime +tempo);
-    }
+  var o = context.createOscillator();
+  var g = context.createGain();
+  o.connect(g);
+  o.type = "sawtooth";
+  o.frequency.value = frecuencia;
+  g.connect(context.destination);
+  o.start(0);
+  g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + tempo);
+}
 
 function sleepi(milliseconds) {
   const date = Date.now();
@@ -865,27 +885,24 @@ function guardador_de_pines(pin) {
 function comprobador_de_pines() {
   var repetidos = {};
   var repetidos2 = [];
-  pines.forEach(function(numero){
+  pines.forEach(function(numero) {
     repetidos[numero] = (repetidos[numero] || 0) + 1;
   });
   var mensaje_error = "ERROR\n\n";
   var pasa = false;
-  for(var i=0;i<pin_out.length;i++)
-  {
-    if(repetidos[pin_out[i]]>1)
-    {
+  for (var i = 0; i < pin_out.length; i++) {
+    if (repetidos[pin_out[i]] > 1) {
       mensaje_error = mensaje_error + "- El PIN " + pin_out[i] + " (" + pre_mensa[i] + ") Esta siendo usado " + repetidos[pin_out[i]] + " veces\n";
-      pasa=true;
+      pasa = true;
     }
   }
-  if(pasa)
-  {
+  if (pasa) {
     alert(mensaje_error);
-  }
-  else {
+  } else {
     //alert("Correcto");
   }
 }
+
 function highlightBlock(id) {
   Code.workspace.highlightBlock(id);
 }
