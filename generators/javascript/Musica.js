@@ -6,10 +6,6 @@ goog.provide('Blockly.JavaScript.Musica');
 goog.require('Blockly.JavaScript');
 
 Blockly.JavaScript['Musica'] = function(block) {
-
-  Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
-  Blockly.JavaScript.addReservedWords('highlightBlock');
-  
   var dropdown_nota = block.getFieldValue('Nota');
   var dropdown_name = block.getFieldValue('Tempo');
   var checkbox_name = block.getFieldValue('Combi') == 'TRUE';
