@@ -490,10 +490,12 @@ Code.runJS = function() {
       throw MSG['timeout'];
     }
   };
+  Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
+  Blockly.JavaScript.addReservedWords('highlightBlock');
   var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-    //alert(code);
+    alert(code);
     eval(code);
     comprobador_de_pines();
   } catch (e) {

@@ -1,4 +1,10 @@
+'use strict';
 
+goog.provide('Blockly.Blocks.MUSICA');  // Deprecated
+goog.provide('Blockly.Constants.MUSICA');  // deprecated, 2018 April 5
+
+goog.require('Blockly.Blocks');
+goog.require('Blockly');
 
 Blockly.Blocks['Musica'] = {
   init: function() {
