@@ -506,12 +506,10 @@ Code.runJS = function() {
   Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
   Blockly.JavaScript.addReservedWords('highlightBlock');
   var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
-  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+  //Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
     alert(code);
-    var myVar = "constructor";
-    myVar[myVar][myVar]( code )();
-    //eval(code);
+    eval(code);
     comprobador_de_pines();
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
@@ -846,7 +844,7 @@ var pin_out = [0, 2, 4, 5, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 2
 
 
 
-function MusicMaker(So, tempo, combi) {
+function MusicMaker(So, tempo, combi) {   //eval('moverImagen(\'adelante\')');
   var frecuencia = parseFloat(So);
   var tiempo = parseFloat(tempo);
   if (combi == false) {
