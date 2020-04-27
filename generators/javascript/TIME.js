@@ -10,7 +10,7 @@ goog.require('Blockly.JavaScript');
 Blockly.JavaScript['esperar'] = function(block) {
   var value_esperar = Blockly.JavaScript.valueToCode(block, 'Esperar', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  value_esperar=value_esperar*1000;
+  value_esperar=parseInt(value_esperar)*1000;
   var code = 'sleepi(' + value_esperar + ');\n';
   return code;
 };

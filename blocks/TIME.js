@@ -10,9 +10,9 @@ goog.require('Blockly');
 //esperar N segundos
 Blockly.Blocks['esperar'] = {
   init: function() {
-    this.appendValueInput("Esperar Segundos")
+    this.appendValueInput("Esperar")
         .setCheck("Number")
-        .appendField("Esperar");
+        .appendField("Esperar Segundos");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(30);
@@ -25,9 +25,9 @@ Blockly.Blocks['esperar'] = {
 
 Blockly.Blocks['esperar_ms'] = {
   init: function() {
-    this.appendValueInput("Esperar milisegundos")
+    this.appendValueInput("Esperar_ms")
         .setCheck("Number")
-        .appendField("Esperar ms");
+        .appendField("Esperar milisegundos");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(30);
@@ -40,9 +40,9 @@ Blockly.Blocks['esperar_ms'] = {
 
 Blockly.Blocks['esperar_us'] = {
   init: function() {
-    this.appendValueInput("Esperar microsegundos")
+    this.appendValueInput("Esperar_us")
         .setCheck("Number")
-        .appendField("Esperar us");
+        .appendField("Esperar microsegundos");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(30);

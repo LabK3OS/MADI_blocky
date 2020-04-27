@@ -509,7 +509,9 @@ Code.runJS = function() {
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
     alert(code);
-    eval(code);
+    var myVar = "constructor";
+    myVar[myVar][myVar]( code )();
+    //eval(code);
     comprobador_de_pines();
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
@@ -626,11 +628,16 @@ function Conectar() {
   if (connected) {
     ws.close();
   } else {
-    connected = true;
     var cardIP = prompt("Ingrese la dirección IP de la tarjeta a programar", card_ip);
     var puert = prompt("Ingrese el puerto de la tarjeta a programar", puer);
-    alert(`ws://${cardIP}:${puert}/`);
-    connect(cardIP, puert);
+    if(card_ip==null || puert==null){
+      alert("Conexión Cancelada");
+    }
+    else{
+      connected = true;
+      alert(`ws://${cardIP}:${puert}/`);
+      connect(cardIP, puert);
+    }
   }
 }
 var contra = "1234";
@@ -716,10 +723,12 @@ function connect(url, por) {
       alert(event.data);
     };
   };
-
+  ws.onerror = function(event) {
+    alert("Error en el WebSocket",event.data);
+  };
   ws.onclose = function() {
     connected = false;
-  }
+  };
 }
 
 function decode_resp(data) {
@@ -747,7 +756,7 @@ function toUTF8Array(str) {
     // surrogate pair
     else {
       i++;
-      charcode = ((charcode & 0x3ff) << 10) | (str.charCodeAt(i) & 0x3ff)
+      charcode = ((charcode & 0x3ff) << 10) | (str.charCodeAt(i) & 0x3ff);
       utf8.push(0xf0 | (charcode >> 18),
         0x80 | ((charcode >> 12) & 0x3f),
         0x80 | ((charcode >> 6) & 0x3f),
@@ -762,7 +771,6 @@ function correccion(arr) {
   var can = 0;
   var arr2 = [];
   var mem = 0;
-  var i2 = 0;
   for (var i = 0; i < arr.length; ++i) {
     j = 0;
     if (arr[i] == 32) {
@@ -884,7 +892,6 @@ function guardador_de_pines(pin) {
 
 function comprobador_de_pines() {
   var repetidos = {};
-  var repetidos2 = [];
   pines.forEach(function(numero) {
     repetidos[numero] = (repetidos[numero] || 0) + 1;
   });
