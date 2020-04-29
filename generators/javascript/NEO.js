@@ -13,3 +13,21 @@ Blockly.JavaScript['pin_neo'] = function(block) {
   var code = 'guardador_de_pines(' + dropdown_pin + ');\n';
   return code;
 };
+
+
+Blockly.JavaScript['neo_cual'] = function(block) {
+  var value_variable = Blockly.JavaScript.valueToCode(block, 'Variable', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_numero = Blockly.JavaScript.valueToCode(block, 'numero', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_rgb = Blockly.JavaScript.valueToCode(block, 'rgb', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+
+Blockly.JavaScript['escribir_neo'] = function(block) {
+  var value_variable = Blockly.JavaScript.valueToCode(block, 'Variable', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};

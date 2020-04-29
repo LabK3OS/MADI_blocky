@@ -40,3 +40,36 @@ Blockly.Blocks['pin_neo'] = {
  this.setHelpUrl("");
   }
 };
+
+
+Blockly.Blocks['neo_cual'] = {
+  init: function() {
+    this.appendValueInput("Variable")
+        .setCheck(null)
+        .appendField("NeoPixel");
+    this.appendValueInput("numero")
+        .setCheck("Number")
+        .appendField("Pixel #");
+    this.appendValueInput("rgb")
+        .setCheck("Array")
+        .appendField("Color");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['escribir_neo'] = {
+  init: function() {
+    this.appendValueInput("Variable")
+        .setCheck(null)
+        .appendField("Encender NeoPixels");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
