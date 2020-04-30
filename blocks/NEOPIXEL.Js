@@ -1,14 +1,12 @@
 'use strict';
 
-goog.provide('Blockly.Blocks.NEO');  // Deprecated
-goog.provide('Blockly.Constants.NEO');  // deprecated, 2018 April 5
+goog.provide('Blockly.Blocks.NEOPIXEL');  // Deprecated
+goog.provide('Blockly.Constants.NEOPIXEL');  // deprecated, 2018 April 5
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-
-
-Blockly.Blocks['pin_neo'] = {
+Blockly.Blocks['neopin'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Variable")
@@ -31,8 +29,8 @@ Blockly.Blocks['pin_neo'] = {
           ["GPIO37","37"],
           ["GPIO38","38"]
         ]), "Pin")
-        .appendField("Cantidad")
-        .appendField(new Blockly.FieldNumber(1, 1, 100, 1), "Can");
+        .appendField("# de Pixeles")
+        .appendField(new Blockly.FieldNumber(8, 1, 100, 1), "Cantidad");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(180);
