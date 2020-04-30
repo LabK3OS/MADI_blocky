@@ -50,7 +50,7 @@ Blockly.Python['colour_rgb'] = function(block) {
        '  r = round(min(100, max(0, r)) * 2.55)',
        '  g = round(min(100, max(0, g)) * 2.55)',
        '  b = round(min(100, max(0, b)) * 2.55)',
-       '  return [r, g, b]']);
+       '  return \'#%02x%02x%02x\' % (r, g, b)']);
        //'  return \'#%02x%02x%02x\' % (r, g, b)']);
   var r = Blockly.Python.valueToCode(block, 'RED',
                                      Blockly.Python.ORDER_NONE) || 0;
@@ -75,7 +75,7 @@ Blockly.Python['colour_blend'] = function(block) {
        '  r = round(r1 * (1 - ratio) + r2 * ratio)',
        '  g = round(g1 * (1 - ratio) + g2 * ratio)',
        '  b = round(b1 * (1 - ratio) + b2 * ratio)',
-       '  return [r, g, b]']);
+       '  return \'#%02x%02x%02x\' % (r, g, b)']);
        //'  return \'#%02x%02x%02x\' % (r, g, b)']);
   var colour1 = Blockly.Python.valueToCode(block, 'COLOUR1',
       Blockly.Python.ORDER_NONE) || '\'#000000\'';

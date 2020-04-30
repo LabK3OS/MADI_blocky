@@ -10,7 +10,7 @@ Blockly.Blocks['neopin'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Variable")
-        .appendField(new Blockly.FieldVariable("NeoPixel"), "Variable");
+        .appendField(new Blockly.FieldVariable("neo_pixel"), "Variable");
     this.appendDummyInput()
         .appendField("Pin")
         .appendField(new Blockly.FieldDropdown([
@@ -49,7 +49,7 @@ Blockly.Blocks['neo_cual'] = {
         .setCheck("Number")
         .appendField("Pixel #");
     this.appendValueInput("rgb")
-        .setCheck("Array")
+        .setCheck(null)
         .appendField("Color");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -66,6 +66,8 @@ Blockly.Blocks['escribir_neo'] = {
     this.appendValueInput("Variable")
         .setCheck(null)
         .appendField("Encender NeoPixels");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
