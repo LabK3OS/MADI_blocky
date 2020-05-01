@@ -70,9 +70,9 @@ Blockly.Python['colour_blend'] = function(block) {
       'colour_blend',
       ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ +
           '(colour1, colour2, ratio):',
-       '  r1, r2 = int(colour1[1:3], 16), int(colour2[1:3], 16)',
-       '  g1, g2 = int(colour1[3:5], 16), int(colour2[3:5], 16)',
-       '  b1, b2 = int(colour1[5:7], 16), int(colour2[5:7], 16)',
+       '  r1, r2 = colour1[0], colour2[0]',
+       '  g1, g2 = colour1[1], colour2[1]',
+       '  b1, b2 = colour1[2], colour2[2]',
        '  ratio = min(1, max(0, ratio))',
        '  r = round(r1 * (1 - ratio) + r2 * ratio)',
        '  g = round(g1 * (1 - ratio) + g2 * ratio)',
