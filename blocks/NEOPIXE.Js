@@ -1,7 +1,7 @@
 'use strict';
 
-goog.provide('Blockly.Blocks.NEOPIXEL');  // Deprecated
-goog.provide('Blockly.Constants.NEOPIXEL');  // deprecated, 2018 April 5
+goog.provide('Blockly.Blocks.NEOPIXE');  // Deprecated
+goog.provide('Blockly.Constants.NEOPIXE');  // deprecated, 2018 April 5
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly');

@@ -1,6 +1,6 @@
 'use strict';
 
-goog.provide('Blockly.JavaScript.NEOPIXEL');
+goog.provide('Blockly.JavaScript.NEOPIXE');
 
 goog.require('Blockly.JavaScript');
 
