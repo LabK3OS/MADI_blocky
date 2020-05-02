@@ -192,36 +192,142 @@
     </category>
     <category name="Sensores" colour="230">
       <block type="sensor_ultrasonico"></block>
-      <block type="distancia_ultrasonico"></block>
+      <block type="distancia_ultrasonico">
+        <value name="NAME">
+          <block type="variables_get" inline="false">
+            <field name="VAR">U_Sonico</field>
+          </block>
+        </value>
+      </block>
       <block type="touch_pin"></block>
-      <block type="read_touch"></block>
-      <block type="conf_touch"></block>
+      <block type="read_touch">
+        <value name="Read">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Touch</field>
+          </block>
+        </value>
+      </block>
+      <block type="conf_touch">
+        <value name="Config">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Touch</field>
+          </block>
+        </value>
+      </block>
       <block type="i2c_mpu"></block>
-      <block type="read_mpu"></block>
+      <block type="read_mpu">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">MPU</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="ESP32" colour="0">
       <block type="pin_in"></block>
       <block type="pin_out"></block>
-      <block type="value_out"></block>
-      <block type="value_in"></block>
+      <block type="value_out">
+        <value name="Pin">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Salida</field>
+          </block>
+        </value>
+      </block>
+      <block type="value_in">
+        <value name="Value">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Entrada</field>
+          </block>
+        </value>
+      </block>
       <block type="adc_pin"></block>
-      <block type="read_adc"></block>
+      <block type="read_adc">
+        <value name="Value">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Conversor</field>
+          </block>
+        </value>
+      </block>
       <block type="pwm_pin"></block>
-      <block type="conf_pwm"></block>
-      <block type="stop_pwm"></block>
+      <block type="conf_pwm">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">pwm1</field>
+          </block>
+        </value>
+      </block>
+      <block type="stop_pwm">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">pwm1</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="NeoPixel" colour="180">
       <block type="pinpixel"></block>
-      <block type="setpixel"></block>
-      <block type="enviarapixel"></block>
+      <block type="setpixel">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">neo_pixel</field>
+          </block>
+        </value>
+        <value name="numero">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="color">
+          <shadow type="colour_picker">
+            <field name="COLOUR">#ff0000</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="enviarapixel">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">neo_pixel</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="Tiempo" colour="30">
-      <block type="esperar"></block>
-      <block type="esperar_ms"></block>
-      <block type="esperar_us"></block>
+      <block type="esperar">
+        <value name="Esperar">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="esperar_ms">
+        <value name="Esperar_ms">
+          <shadow type="math_number">
+            <field name="NUM">1000</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="esperar_us">
+        <value name="Esperar_us">
+          <shadow type="math_number">
+            <field name="NUM">1000000</field>
+          </shadow>
+        </value>
+      </block>
       <block type="conf_rtc"></block>
-      <block type="set_date"></block>
-      <block type="read_rtc"></block>
+      <block type="set_date">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Fecha</field>
+          </block>
+        </value>
+      </block>
+      <block type="read_rtc">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Fecha</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="%{BKY_CATLOOPS}" colour="%{BKY_LOOPS_HUE}">
       <block type="controls_repeat_ext">
