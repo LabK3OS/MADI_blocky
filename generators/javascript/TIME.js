@@ -59,3 +59,15 @@ Blockly.JavaScript['read_rtc'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+
+
+Blockly.JavaScript['timer_create'] = function(block) {
+  var variable_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
+  var value_funcion = Blockly.JavaScript.valueToCode(block, 'Funcion', Blockly.JavaScript.ORDER_ATOMIC);
+  var number_periodo = block.getFieldValue('Periodo');
+  var dropdown_modo = block.getFieldValue('Modo');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};

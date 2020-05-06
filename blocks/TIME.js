@@ -116,3 +116,25 @@ Blockly.Blocks['read_rtc'] = {
  this.setHelpUrl("");
   }
 };
+
+
+Blockly.Blocks['timer_create'] = {
+  init: function() {
+    this.appendValueInput("Funcion")
+        .setCheck("String")
+        .appendField("Variable")
+        .appendField(new Blockly.FieldVariable("Temporizador"), "Variable")
+        .appendField("Función ->");
+    this.appendDummyInput()
+        .appendField("Periodo")
+        .appendField(new Blockly.FieldNumber(20, 20, Infinity, 1), "Periodo")
+        .appendField("ms, Modo")
+        .appendField(new Blockly.FieldDropdown([["Unico","ONE_SHOT"], ["Periodico","PERIODIC"]]), "Modo");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(30);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
