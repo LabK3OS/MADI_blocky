@@ -58,16 +58,16 @@ Blockly.Python['read_rtc'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-
 Blockly.Python['timer_create'] = function(block) {
   var variable_variable = Blockly.Python.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
-  var value_funcion = Blockly.Python.valueToCode(block, 'Funcion', Blockly.Python.ORDER_ATOMIC);
-  var number_periodo = block.getFieldValue('Periodo');
+  var number_timer = block.getFieldValue('timer');
   var dropdown_modo = block.getFieldValue('Modo');
+  var number_periodo = block.getFieldValue('Periodo');
+  var value_funcion = Blockly.Python.valueToCode(block, 'Funcion', Blockly.Python.ORDER_ATOMIC);
   value_funcion = value_funcion.slice(1,-1);
   value_funcion = value_funcion.replace(new RegExp(" ","g"),"_");
   Blockly.Python.definitions_['import_timer'] = 'from machine import Timer';
   // TODO: Assemble Python into code variable.
-  var code = variable_variable + ' = Timer(-1)\n' + variable_variable + '.init(period=' + number_periodo +', mode=Timer.' + dropdown_modo + ', callback=' + value_funcion + ')\n';
+  var code = variable_variable + ' = Timer(' + number_timer + ')\n' + variable_variable + '.init(period=' + number_periodo +', mode=Timer.' + dropdown_modo + ', callback=' + value_funcion + ')\n';
   return code;
 };

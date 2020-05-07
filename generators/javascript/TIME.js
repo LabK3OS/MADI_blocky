@@ -64,9 +64,10 @@ Blockly.JavaScript['read_rtc'] = function(block) {
 
 Blockly.JavaScript['timer_create'] = function(block) {
   var variable_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
-  var value_funcion = Blockly.JavaScript.valueToCode(block, 'Funcion', Blockly.JavaScript.ORDER_ATOMIC);
-  var number_periodo = block.getFieldValue('Periodo');
+  var number_timer = block.getFieldValue('timer');
   var dropdown_modo = block.getFieldValue('Modo');
+  var number_periodo = block.getFieldValue('Periodo');
+  var value_funcion = Blockly.JavaScript.valueToCode(block, 'Funcion', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   return code;

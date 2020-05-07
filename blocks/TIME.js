@@ -120,16 +120,19 @@ Blockly.Blocks['read_rtc'] = {
 
 Blockly.Blocks['timer_create'] = {
   init: function() {
+    this.appendDummyInput()
+        .appendField("Variable")
+        .appendField(new Blockly.FieldVariable("Temp"), "Variable");
+    this.appendDummyInput()
+        .appendField("Temporizador")
+        .appendField(new Blockly.FieldNumber(0, 0, 3, 1), "timer")
+        .appendField("Modo")
+        .appendField(new Blockly.FieldDropdown([["Unico","ONE_SHOT"], ["Periodico","PERIODIC"]]), "Modo");
     this.appendValueInput("Funcion")
         .setCheck("String")
-        .appendField("Variable")
-        .appendField(new Blockly.FieldVariable("Temporizador"), "Variable")
-        .appendField("Función ->");
-    this.appendDummyInput()
         .appendField("Periodo")
         .appendField(new Blockly.FieldNumber(20, 20, Infinity, 1), "Periodo")
-        .appendField("ms, Modo")
-        .appendField(new Blockly.FieldDropdown([["Unico","ONE_SHOT"], ["Periodico","PERIODIC"]]), "Modo");
+        .appendField("ms, Función ->");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
