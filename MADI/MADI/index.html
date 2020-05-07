@@ -13,6 +13,8 @@
   <script src="../../python_compressed.js"></script>
   <script src="../../music_maker.js"></script>
   <script src="code.js"></script>
+
+
 </head>
 
 <body background="Lápiz.jpg" style="background-repeat:no-repeat;">
@@ -120,6 +122,12 @@
               <button id="runButton" class="notext" title="...">
                 <img src='../../media/play.png' class="run icon21">
               </button>
+              <button id="guardar" onclick="guardado()" class="notext" title="Guardar">
+                <img src='../../media/tecnologia.png' class="run icon21">
+              </button>
+              <button type="file" id="files" name="files" class="notext" title="Cargar">
+                <img src='../../media/computadora.png' class="run icon21">
+              </button>
               <button id="descargar" onclick="Desc()" class="notext" title="Descargar Archivo">
                 <img src='../../media/descargar.png' class="run icon21">
               </button>
@@ -176,7 +184,6 @@
   <pre id="content_lua" class="content"></pre>
   <pre id="content_dart" class="content"></pre>
   <textarea id="content_xml" class="content" wrap="off"></textarea>
-
   <xml id="toolbox" style="display: none">
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>

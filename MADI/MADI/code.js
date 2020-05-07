@@ -555,12 +555,14 @@ var workspace = Blockly.inject(blocklyDiv,
     trashcan: true
   });
   */
+  var tipo_descarga;
 function Desc() {
   Blockly.Python.INFINITE_LOOP_TRAP = null;
   var code = Blockly.Python.workspaceToCode(Code.workspace);
   alert(code);
   var code1 = Blockly.Python.workspaceToCode(Code.workspace);
   Descargar(code1);
+  tipo_descarga = 1;
   //Code.attemptCodeGeneration(Blockly.Python, 'py',1);
 }
 
@@ -572,8 +574,13 @@ function Descargar(code) {
     type: 'text/plain'
   });
   // Specify the name of the file to be saved
-  var fileNameToSaveAs = "main.py";
-
+  if (tipo_descarga==1){
+    var fileNameToSaveAs = "main.py";
+  }
+  else if(tipo_descarga==2)
+  {
+    var fileNameToSaveAs = "bloques.txt";
+  }
   // Optionally allow the user to choose a file name by providing
   // an imput field in the HTML and using the collected data here
   // var fileNameToSaveAs = txtFileName.text;
@@ -911,3 +918,22 @@ function comprobador_de_pines() {
 function highlightBlock(id) {
   Code.workspace.highlightBlock(id);
 }
+
+function handleFileSelect(evt) {
+    var files = evt.target.files;
+    var reader = new FileReader();
+    var xml_text = reader.readAsText(files);
+    var xml = Blockly.Xml.textToDom(xml_text);
+    Blockly.Xml.domToWorkspace(xml, workspace);
+}
+
+function guardado()
+{
+  var xml = Blockly.Xml.workspaceToDom(Code.workspace);
+  var xml_text = Blockly.Xml.domToText(xml);
+  tipo_descarga = 2;
+  Descargar(xml_text);
+}
+
+
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
