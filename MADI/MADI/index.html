@@ -125,6 +125,23 @@
               <button id="guardar" onclick="guardado()" class="notext" title="Guardar">
                 <img src='../../media/tecnologia.png' class="run icon21">
               </button>
+              <input type='file' accept='text/plain' onchange='openFile(event)'><br>
+              <img id='output'>
+              <script>
+                var openFile = function(event) {
+                  var input = event.target;
+
+                  var reader = new FileReader();
+                  reader.onload = function(){
+                    var text = reader.result;
+                    var xml = Blockly.Xml.textToDom(text);
+                    Blockly.Xml.domToWorkspace(xml, Code.workspace);
+                    console.log(reader.result.substring(0, 200));
+                  };
+                  reader.readAsText(input.files[0]);
+                };
+              </script>
+
               <button type="file" id="files" name="files" class="notext" title="Cargar">
                 <img src='../../media/computadora.png' class="run icon21">
               </button>

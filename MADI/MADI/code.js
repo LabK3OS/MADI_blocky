@@ -919,13 +919,6 @@ function highlightBlock(id) {
   Code.workspace.highlightBlock(id);
 }
 
-function handleFileSelect(evt) {
-    var files = evt.target.files;
-    var reader = new FileReader();
-    var xml_text = reader.readAsText(files);
-    var xml = Blockly.Xml.textToDom(xml_text);
-    Blockly.Xml.domToWorkspace(xml, workspace);
-}
 
 function guardado()
 {
@@ -934,6 +927,3 @@ function guardado()
   tipo_descarga = 2;
   Descargar(xml_text);
 }
-
-
-document.getElementById('files').addEventListener('change', handleFileSelect, false);
