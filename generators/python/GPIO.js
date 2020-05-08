@@ -47,3 +47,23 @@ Blockly.Python['value_in'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
+
+
+Blockly.Python['irq_pin'] = function(block) {
+  var value_variable = Blockly.Python.valueToCode(block, 'Variable', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_trigger = block.getFieldValue('trigger');
+  var value_funcion = Blockly.Python.valueToCode(block, 'funcion', Blockly.Python.ORDER_ATOMIC);
+  value_funcion = value_funcion.slice(1,-1);
+  value_funcion = value_funcion.replace(new RegExp(" ","g"),"_");
+  // TODO: Assemble Python into code variable.
+  var code = value_variable + '.irq(trigger=Pin.' + dropdown_trigger + ', handler=' + value_funcion + ')\n';
+  return code;
+};
+
+
+Blockly.Python['irq_on_off'] = function(block) {
+  var dropdown_interruptor = block.getFieldValue('interruptor');
+  // TODO: Assemble Python into code variable.
+  var code = dropdown_interruptor + '\n';
+  return code;
+};

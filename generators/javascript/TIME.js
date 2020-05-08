@@ -72,3 +72,11 @@ Blockly.JavaScript['timer_create'] = function(block) {
   var code = '\n';
   return code;
 };
+
+
+Blockly.JavaScript['stop_timer'] = function(block) {
+  var value_variable = Blockly.JavaScript.valueToCode(block, 'Variable', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};

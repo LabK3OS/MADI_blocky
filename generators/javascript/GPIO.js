@@ -38,3 +38,19 @@ Blockly.JavaScript['value_in'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['irq_pin'] = function(block) {
+  var value_variable = Blockly.JavaScript.valueToCode(block, 'Variable', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_trigger = block.getFieldValue('trigger');
+  var value_funcion = Blockly.JavaScript.valueToCode(block, 'funcion', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['irq_on_off'] = function(block) {
+  var dropdown_interruptor = block.getFieldValue('interruptor');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};

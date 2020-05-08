@@ -141,3 +141,18 @@ Blockly.Blocks['timer_create'] = {
  this.setHelpUrl("");
   }
 };
+
+
+
+Blockly.Blocks['stop_timer'] = {
+  init: function() {
+    this.appendValueInput("Variable")
+        .setCheck(null)
+        .appendField("Detener Temporizador");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(30);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

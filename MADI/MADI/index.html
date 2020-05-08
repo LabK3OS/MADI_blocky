@@ -245,6 +245,19 @@
     </category>
     <category name="ESP32" colour="0">
       <block type="pin_in"></block>
+      <block type="irq_pin">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Entrada</field>
+          </block>
+        </value>
+        <value name="funcion">
+          <shadow type="text">
+            <field name="TEXT">hacer algo</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="irq_on_off"></block>
       <block type="pin_out"></block>
       <block type="value_out">
         <value name="Pin">
@@ -353,6 +366,13 @@
           <shadow type="text">
             <field name="TEXT">hacer algo</field>
           </shadow>
+        </value>
+      </block>
+      <block type="stop_timer">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">Temp</field>
+          </block>
         </value>
       </block>
     </category>

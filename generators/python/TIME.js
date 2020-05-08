@@ -71,3 +71,12 @@ Blockly.Python['timer_create'] = function(block) {
   var code = variable_variable + ' = Timer(' + number_timer + ')\n' + variable_variable + '.init(period=' + number_periodo +', mode=Timer.' + dropdown_modo + ', callback=lambda t:' + value_funcion + '())\n';
   return code;
 };
+
+
+
+Blockly.Python['stop_timer'] = function(block) {
+  var value_variable = Blockly.Python.valueToCode(block, 'Variable', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_variable + '.deinit()\n';
+  return code;
+};

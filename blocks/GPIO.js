@@ -110,3 +110,37 @@ Blockly.Blocks['value_in'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['irq_pin'] = {
+  init: function() {
+    this.appendValueInput("Variable")
+        .setCheck(null)
+        .appendField("Interrupcion en Pin de entrada");
+    this.appendValueInput("funcion")
+        .setCheck("String")
+        .appendField("Activador")
+        .appendField(new Blockly.FieldDropdown([["Subida","IRQ_RISING"], ["Bajada","IRQ_FALLING"], ["Cualquier cambio","(IRQ_FALLING | IRQ_RISING)"]]), "trigger")
+        .appendField(",Función");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(0);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['irq_on_off'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["Desabilitar","estadoState = disable_irq()"], ["Habilitar","enable_irq(estadoState)"]]), "interruptor")
+        .appendField("Interrupciones");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(0);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
