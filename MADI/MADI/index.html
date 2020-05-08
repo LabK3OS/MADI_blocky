@@ -113,20 +113,8 @@
 
             <td id="tab_xml" class="taboff"></td>
             <td class="tabmax">
-              <button id="trashButton" class="notext" title="...">
-                <img src='../../media/basura.png' class="trash icon21">
-              </button>
-              <button id="linkButton" class="notext" title="...">
-                <img src='../../media/1x1.gif' class="link icon21">
-              </button>
-              <button id="runButton" class="notext" title="...">
-                <img src='../../media/play.png' class="run icon21">
-              </button>
-              <button id="guardar" onclick="guardado()" class="notext" title="Guardar">
-                <img src='../../media/tecnologia.png' class="run icon21">
-              </button>
-              <input type='file' accept='text/plain' onchange='openFile(event)'><br>
-              <img id='output'>
+            <button id="cargar"  class="notext" title="Cargar">
+              <input type='file'  accept='text/plain' onchange='openFile(event)'>
               <script>
                 var openFile = function(event) {
                   var input = event.target;
@@ -136,14 +124,22 @@
                     var text = reader.result;
                     var xml = Blockly.Xml.textToDom(text);
                     Blockly.Xml.domToWorkspace(xml, Code.workspace);
-                    console.log(reader.result.substring(0, 200));
                   };
                   reader.readAsText(input.files[0]);
                 };
               </script>
-
-              <button type="file" id="files" name="files" class="notext" title="Cargar">
-                <img src='../../media/computadora.png' class="run icon21">
+              <button id="guardar" onclick="guardado()" class="notext" title="Guardar">
+                <img src='../../media/tecnologia.png' class="run icon21">
+              </button>
+              </button>
+              <button id="trashButton" class="notext" title="...">
+                <img src='../../media/basura.png' class="trash icon21">
+              </button>
+              <button id="linkButton" class="notext" title="...">
+                <img src='../../media/1x1.gif' class="link icon21">
+              </button>
+              <button id="runButton" class="notext" title="...">
+                <img src='../../media/play.png' class="run icon21">
               </button>
               <button id="descargar" onclick="Desc()" class="notext" title="Descargar Archivo">
                 <img src='../../media/descargar.png' class="run icon21">
