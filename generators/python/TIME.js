@@ -68,6 +68,6 @@ Blockly.Python['timer_create'] = function(block) {
   value_funcion = value_funcion.replace(new RegExp(" ","g"),"_");
   Blockly.Python.definitions_['import_timer'] = 'from machine import Timer';
   // TODO: Assemble Python into code variable.
-  var code = variable_variable + ' = Timer(' + number_timer + ')\n' + variable_variable + '.init(period=' + number_periodo +', mode=Timer.' + dropdown_modo + ', callback=' + value_funcion + ')\n';
+  var code = variable_variable + ' = Timer(' + number_timer + ')\n' + variable_variable + '.init(period=' + number_periodo +', mode=Timer.' + dropdown_modo + ', callback=lambda t:' + value_funcion + '())\n';
   return code;
 };
