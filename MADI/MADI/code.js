@@ -851,16 +851,11 @@ var pin_out = [0, 2, 4, 5, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 2
 
 
 
-function MusicMaker(So, tempo, combi) {   //eval('moverImagen(\'adelante\')');
+function MusicMaker(So, tempo) {   //eval('moverImagen(\'adelante\')');
   var frecuencia = parseFloat(So);
   var tiempo = parseFloat(tempo);
-  if (combi == false) {
     jsNota(frecuencia, tiempo);
     tiempo = tiempo * 500;
-  } else {
-    jsNota(frecuencia, tiempo);
-    tiempo = 0;
-  }
   sleepi(tiempo);
 }
 
