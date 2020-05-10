@@ -34,7 +34,6 @@ Blockly.Blocks['pin_in'] = {
           ["GPIO27","27"],
           ["GPIO32","32"],
           ["GPIO33","33"],
-          ["GPIO35","35"],
           ["GPIO36","36"],
           ["GPIO37","37"],
           ["GPIO38","38"]

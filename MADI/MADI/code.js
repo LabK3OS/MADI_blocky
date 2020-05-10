@@ -855,7 +855,7 @@ function MusicMaker(So, tempo) {   //eval('moverImagen(\'adelante\')');
   var frecuencia = parseFloat(So);
   var tiempo = parseFloat(tempo);
     jsNota(frecuencia, tiempo);
-    tiempo = tiempo * 500;
+    tiempo = tiempo * 1000;
   sleepi(tiempo);
 }
 

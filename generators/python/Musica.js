@@ -13,9 +13,9 @@ Blockly.Python['Musica'] = function(block) {
   Blockly.Python.definitions_['import_pwm'] = 'from machine import PWM';
   Blockly.Python.definitions_['import_musica'] = 'musica_1 = PWM(Pin(12))';
   // TODO: Assemble Python into code variable.
-dropdown_name = 1000 * parseFloat(dropdown_name);
+dropdown_name = (1000000 * parseFloat(dropdown_name)-31250);
+var pausa = 31250
 
-
-  var code = 'musica_1.freq(' + dropdown_nota + ')\nmusica_1.duty(512)\ntime.sleep_ms(' + dropdown_name +')\nmusica_1.deinit()\ntime.sleep_ms(50)\n';
+  var code = 'musica_1.freq(' + dropdown_nota + ')\nmusica_1.duty(512)\ntime.sleep_us(' + dropdown_name +')\nmusica_1.deinit()\ntime.sleep_us(' + pausa +')\n';
   return code;
 };
