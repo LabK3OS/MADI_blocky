@@ -46,7 +46,7 @@ Blockly.Python['set_date'] = function(block) {
   var number_minuto = block.getFieldValue('Minuto');
   var number_segundo = block.getFieldValue('Segundo');
   // TODO: Assemble Python into code variable.
-  var code = value_variable + '.date((' + number_ano + ', ' + dropdown_mes + ', ' + number_dia + ', ' + number_hora + ', ' + number_minuto + ', ' + number_segundo + ', 0, 0))\n';
+  var code = value_variable + '.datetime((' + number_ano + ', ' + dropdown_mes + ', ' + number_dia + ', 0, ' + number_hora + ', ' + number_minuto + ', ' + number_segundo + ', 0))\n';
   return code;
 };
 
