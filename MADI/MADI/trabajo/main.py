@@ -1,40 +1,11 @@
+from hcsr04 import HCSR04
 from machine import Pin
-from neopixel import NeoPixel
+import time
 
-neo_pixel = None
-i = None
-j = None
-
-def colour_rgb(r, g, b):
-  r = round(min(100, max(0, r)) * 2.55)
-  g = round(min(100, max(0, g)) * 2.55)
-  b = round(min(100, max(0, b)) * 2.55)
-  return (r, g, b)
+U_Sonico = None
 
 
-neo_pixel = NeoPixel(Pin(12, Pin.OUT),24)
+U_Sonico = HCSR04(trigger_pin=12, echo_pin=13)
 while True:
-  for i in range(25):
-    for j in range(25):
-      neo_pixel[i-1] = (colour_rgb(100, i, 0))
-    neo_pixel.write()
-  for i in range(25):
-    for j in range(25):
-      neo_pixel[i-1] = (colour_rgb(100-i, 100, 0))
-    neo_pixel.write()
-  for i in range(25):
-    for j in range(25):
-      neo_pixel[i-1] = (colour_rgb(0, 100, i))
-    neo_pixel.write()
-  for i in range(25):
-    for j in range(25):
-      neo_pixel[i-1] = (colour_rgb(0, 100-i, 100))
-    neo_pixel.write()
-  for i in range(25):
-    for j in range(25):
-      neo_pixel[i-1] = (colour_rgb(i, 0, 100))
-    neo_pixel.write()
-  for i in range(25):
-    for j in range(25):
-      neo_pixel[i-1] = (colour_rgb(100, 0, 100-i))
-    neo_pixel.write()
+  print(U_Sonico.distance_cm())
+  time.sleep(1)
