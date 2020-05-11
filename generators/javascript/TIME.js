@@ -61,6 +61,15 @@ Blockly.JavaScript['read_rtc'] = function(block) {
 };
 
 
+Blockly.JavaScript['separar_fecha'] = function(block) {
+  var dropdown_opcion = block.getFieldValue('opcion');
+  var value_arreglo = Blockly.JavaScript.valueToCode(block, 'arreglo', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 
 Blockly.JavaScript['timer_create'] = function(block) {
   var variable_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);

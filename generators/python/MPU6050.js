@@ -27,3 +27,12 @@ Blockly.Python['read_mpu'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
+
+Blockly.Python['separar_mpu'] = function(block) {
+  var dropdown_opcion = block.getFieldValue('opcion');
+  var value_arreglo = Blockly.Python.valueToCode(block, 'arreglo', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_arreglo + '["' + dropdown_opcion + '"]';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};

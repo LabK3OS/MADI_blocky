@@ -44,3 +44,17 @@ Blockly.Blocks['read_mpu'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['separar_mpu'] = {
+  init: function() {
+    this.appendValueInput("arreglo")
+        .setCheck("Array")
+        .appendField("Obtener")
+        .appendField(new Blockly.FieldDropdown([["AceleraciónX","AcX"], ["AceleraciónY","AcY"], ["AceleraciónZ","AcZ"], ["Temperatura","Tmp"], ["GiroscopioX","GyX"], ["GiroscopioY","GyY"], ["GiroscopioZ","GyZ"]]), "opcion")
+        .appendField("de MPU");
+    this.setOutput(true, null);
+    this.setColour(70);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

@@ -109,7 +109,22 @@ Blockly.Blocks['read_rtc'] = {
   init: function() {
     this.appendValueInput("Variable")
         .setCheck(null)
-        .appendField("Leer Fecha");
+        .appendField("Obtener Fecha Completa");
+    this.setOutput(true, null);
+    this.setColour(30);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['separar_fecha'] = {
+  init: function() {
+    this.appendValueInput("arreglo")
+        .setCheck("Array")
+        .appendField("Obtener")
+        .appendField(new Blockly.FieldDropdown([["Segundos","6"], ["Minutos","5"], ["Hora","4"], ["Día","2"], ["Mes","1"], ["Año","0"]]), "opcion")
+        .appendField("de fecha");
     this.setOutput(true, null);
     this.setColour(30);
  this.setTooltip("");

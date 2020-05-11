@@ -25,3 +25,12 @@ Blockly.JavaScript['read_mpu'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['separar_mpu'] = function(block) {
+  var dropdown_opcion = block.getFieldValue('opcion');
+  var value_arreglo = Blockly.JavaScript.valueToCode(block, 'arreglo', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

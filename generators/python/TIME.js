@@ -58,6 +58,15 @@ Blockly.Python['read_rtc'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+Blockly.Python['separar_fecha'] = function(block) {
+  var dropdown_opcion = block.getFieldValue('opcion');
+  var value_arreglo = Blockly.Python.valueToCode(block, 'arreglo', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_arreglo + '[' + dropdown_opcion + ']';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
 Blockly.Python['timer_create'] = function(block) {
   var variable_variable = Blockly.Python.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
   var number_timer = block.getFieldValue('timer');
