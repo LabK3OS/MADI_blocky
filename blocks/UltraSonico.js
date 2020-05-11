@@ -52,7 +52,7 @@ Blockly.Blocks['sensor_ultrasonico'] = {
         ]), "Echo");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(54);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -66,7 +66,7 @@ Blockly.Blocks['distancia_ultrasonico'] = {
         .setCheck(null)
         .appendField("Distancia");
     this.setOutput(true, "Number");
-    this.setColour(230);
+    this.setColour(54);
  this.setTooltip("");
  this.setHelpUrl("");
   }

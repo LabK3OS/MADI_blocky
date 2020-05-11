@@ -36,7 +36,7 @@ Blockly.Blocks['adc_pin'] = {
         ]), "Pin");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(30);
+    this.setColour(126);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -49,7 +49,7 @@ Blockly.Blocks['read_adc'] = {
         .setCheck(null)
         .appendField("Leer ADC");
     this.setOutput(true, null);
-    this.setColour(30);
+    this.setColour(126);
  this.setTooltip("");
  this.setHelpUrl("");
   }

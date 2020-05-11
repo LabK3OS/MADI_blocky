@@ -29,7 +29,7 @@ Blockly.Blocks['touch_pin'] = {
         ]), "Pin");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(270);
+    this.setColour(288);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -42,7 +42,7 @@ Blockly.Blocks['read_touch'] = {
         .setCheck("String")
         .appendField("Leer Touch");
     this.setOutput(true, "Number");
-    this.setColour(270);
+    this.setColour(288);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -59,7 +59,7 @@ Blockly.Blocks['conf_touch'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(270);
+    this.setColour(288);
  this.setTooltip("");
  this.setHelpUrl("");
   }

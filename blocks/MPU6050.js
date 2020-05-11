@@ -26,7 +26,7 @@ Blockly.Blocks['i2c_mpu'] = {
         ]), "SDA");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(70);
+    this.setColour(90);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -39,7 +39,7 @@ Blockly.Blocks['read_mpu'] = {
         .setCheck(null)
         .appendField("Leer MPU6050");
     this.setOutput(true, "Array");
-    this.setColour(70);
+    this.setColour(90);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -53,7 +53,7 @@ Blockly.Blocks['separar_mpu'] = {
         .appendField(new Blockly.FieldDropdown([["AceleraciónX","AcX"], ["AceleraciónY","AcY"], ["AceleraciónZ","AcZ"], ["Temperatura","Tmp"], ["GiroscopioX","GyX"], ["GiroscopioY","GyY"], ["GiroscopioZ","GyZ"]]), "opcion")
         .appendField("de MPU");
     this.setOutput(true, null);
-    this.setColour(70);
+    this.setColour(90);
  this.setTooltip("");
  this.setHelpUrl("");
   }

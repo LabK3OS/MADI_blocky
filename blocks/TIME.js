@@ -15,7 +15,7 @@ Blockly.Blocks['esperar'] = {
         .appendField("Esperar Segundos");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(30);
+    this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -30,7 +30,7 @@ Blockly.Blocks['esperar_ms'] = {
         .appendField("Esperar milisegundos");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(30);
+    this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -45,7 +45,7 @@ Blockly.Blocks['esperar_us'] = {
         .appendField("Esperar microsegundos");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(30);
+    this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -58,7 +58,7 @@ Blockly.Blocks['conf_rtc'] = {
         .appendField(new Blockly.FieldVariable("Fecha"), "rtc");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(30);
+    this.setColour(198);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -99,7 +99,7 @@ Blockly.Blocks['set_date'] = {
         .appendField(new Blockly.FieldNumber(0, 0, 60, 1), "Segundo");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(30);
+    this.setColour(198);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -111,7 +111,7 @@ Blockly.Blocks['read_rtc'] = {
         .setCheck(null)
         .appendField("Obtener Fecha Completa");
     this.setOutput(true, null);
-    this.setColour(30);
+    this.setColour(198);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -126,7 +126,7 @@ Blockly.Blocks['separar_fecha'] = {
         .appendField(new Blockly.FieldDropdown([["Segundos","6"], ["Minutos","5"], ["Hora","4"], ["Día","2"], ["Mes","1"], ["Año","0"]]), "opcion")
         .appendField("de fecha");
     this.setOutput(true, null);
-    this.setColour(30);
+    this.setColour(198);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -151,7 +151,7 @@ Blockly.Blocks['timer_create'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(30);
+    this.setColour(144);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -166,7 +166,7 @@ Blockly.Blocks['stop_timer'] = {
         .appendField("Detener Temporizador");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(30);
+    this.setColour(144);
  this.setTooltip("");
  this.setHelpUrl("");
   }

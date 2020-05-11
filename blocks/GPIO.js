@@ -40,7 +40,7 @@ Blockly.Blocks['pin_in'] = {
         ]), "Pin");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(252);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -71,7 +71,7 @@ Blockly.Blocks['pin_out'] = {
         ]), "Pin");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(252);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -91,7 +91,7 @@ Blockly.Blocks['value_out'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(252);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -104,7 +104,7 @@ Blockly.Blocks['value_in'] = {
         .setCheck(null)
         .appendField("Leer PIN");
     this.setOutput(true, null);
-    this.setColour(0);
+    this.setColour(252);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -123,7 +123,7 @@ Blockly.Blocks['irq_pin'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(252);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -138,7 +138,7 @@ Blockly.Blocks['irq_on_off'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(252);
  this.setTooltip("");
  this.setHelpUrl("");
   }

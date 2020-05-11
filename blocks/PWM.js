@@ -31,7 +31,7 @@ Blockly.Blocks['pwm_pin'] = {
         ]), "Pin");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(216);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -54,7 +54,7 @@ Blockly.Blocks['conf_pwm'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(216);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -68,7 +68,7 @@ Blockly.Blocks['stop_pwm'] = {
         .appendField("Detener PWM");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(216);
  this.setTooltip("");
  this.setHelpUrl("");
   }

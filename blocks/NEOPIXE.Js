@@ -33,7 +33,7 @@ Blockly.Blocks['pin_neopixel'] = {
         .appendField(new Blockly.FieldNumber(1, 1, 100, 1), "Can");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(162);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -55,7 +55,7 @@ Blockly.Blocks['neo_cual'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(162);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -69,7 +69,7 @@ Blockly.Blocks['escribir_neo'] = {
         .appendField("Encender NeoPixels");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(162);
  this.setTooltip("");
  this.setHelpUrl("");
   }
