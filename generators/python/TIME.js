@@ -89,3 +89,6 @@ Blockly.Python['stop_timer'] = function(block) {
   var code = value_variable + '.deinit()\n';
   return code;
 };
+
+
+// https://www.esploradores.com/micropython_rtc/
