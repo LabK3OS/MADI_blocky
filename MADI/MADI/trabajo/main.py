@@ -1,11 +1,16 @@
-from hcsr04 import HCSR04
 from machine import Pin
-import time
 
-U_Sonico = None
+Entrada = None
+
+"""Describe esta función...
+"""
+def hacer_algo():
+  global Entrada
+  print('INTERRUPCION')
 
 
-U_Sonico = HCSR04(trigger_pin=12, echo_pin=13)
+Entrada=Pin(12, Pin.IN,Pin.PULL_UP)
+Entrada.irq(trigger = Pin.IRQ_RISING, handler = lambda t:hacer_algo())
+
 while True:
-  print(U_Sonico.distance_cm())
-  time.sleep(1)
+  pass

@@ -22,7 +22,7 @@ ntptime.settime()       #https://github.com/micropython/micropython/blob/master/
 # SINCRONIZACIÓN DEL RELOJ INTERNO E IMPRESIÓN DE FECHA Y HORA
 from machine import RTC
 (year, month, mday, week_of_year, hour, minute, second, milisecond)=RTC().datetime()
-RTC().init((year, month, mday, week_of_year, hour+2, minute, second, milisecond))   # GMT corrección. GMT+2 (ESPAÑA)
+RTC().datetime((year, month, mday, week_of_year, hour-5, minute, second, milisecond))   # GMT corrección. GMT+2 (ESPAÑA)
 
 print ("Fecha: {:02d}/{:02d}/{}".format(RTC().datetime()[2],
                                         RTC().datetime()[1],
