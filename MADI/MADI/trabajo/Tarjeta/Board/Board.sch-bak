@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L SparkFun-Boards:ESP32_THING_W_ANT_KEEPOUT B?
+L SparkFun-Boards:ESP32_THING_W_ANT_KEEPOUT B1
 U 1 1 5EBFF6FD
 P 5200 3550
-F 0 "B?" H 5200 4910 45  0000 C CNN
+F 0 "B1" H 5200 4910 45  0000 C CNN
 F 1 "ESP32_THING_W_ANT_KEEPOUT" H 5200 4826 45  0000 C CNN
 F 2 "ESP32_THING" H 5200 4750 20  0001 C CNN
 F 3 "" H 5200 3550 50  0001 C CNN
@@ -26,12 +26,12 @@ F 4 "DEV-13907" H 5200 4731 60  0000 C CNN "Campo4"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x08_Female J?
+L Connector:Conn_01x08_Female J4
 U 1 1 5EC0084F
 P 7200 2900
-F 0 "J?" H 7228 2876 50  0000 L CNN
+F 0 "J4" H 7228 2876 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 7228 2785 50  0000 L CNN
-F 2 "" H 7200 2900 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 7200 2900 50  0001 C CNN
 F 3 "~" H 7200 2900 50  0001 C CNN
 	1    7200 2900
 	1    0    0    -1  
@@ -74,12 +74,12 @@ NoConn ~ 7000 3100
 NoConn ~ 7000 3200
 NoConn ~ 7000 3300
 $Comp
-L Connector:Conn_01x04_Female J?
+L Connector:Conn_01x04_Female J2
 U 1 1 5EC0471E
 P 3850 2950
-F 0 "J?" H 3878 2926 50  0000 L CNN
-F 1 "Conn_01x04_Female" H 3878 2835 50  0000 L CNN
-F 2 "" H 3850 2950 50  0001 C CNN
+F 0 "J2" H 3742 2525 50  0000 C CNN
+F 1 "Conn_01x04_Female" H 3742 2616 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3850 2950 50  0001 C CNN
 F 3 "~" H 3850 2950 50  0001 C CNN
 	1    3850 2950
 	-1   0    0    1   
@@ -101,12 +101,12 @@ Wire Wire Line
 Connection ~ 4400 4600
 NoConn ~ 4050 3050
 $Comp
-L Connector:Conn_01x02_Female J?
+L Connector:Conn_01x02_Female J3
 U 1 1 5EC11998
 P 3850 3950
-F 0 "J?" H 3742 3625 50  0000 C CNN
+F 0 "J3" H 3742 3625 50  0000 C CNN
 F 1 "Conn_01x02_Female" H 3742 3716 50  0000 C CNN
-F 2 "" H 3850 3950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3850 3950 50  0001 C CNN
 F 3 "~" H 3850 3950 50  0001 C CNN
 	1    3850 3950
 	-1   0    0    1   
@@ -130,12 +130,12 @@ Wire Wire Line
 Wire Wire Line
 	6250 3950 5700 3950
 $Comp
-L Connector:Conn_01x04_Female J?
+L Connector:Conn_01x04_Female J5
 U 1 1 5EC03BB9
 P 7200 3600
-F 0 "J?" H 7228 3576 50  0000 L CNN
+F 0 "J5" H 7228 3576 50  0000 L CNN
 F 1 "Conn_01x04_Female" H 7228 3485 50  0000 L CNN
-F 2 "" H 7200 3600 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 7200 3600 50  0001 C CNN
 F 3 "~" H 7200 3600 50  0001 C CNN
 	1    7200 3600
 	1    0    0    -1  
@@ -172,10 +172,10 @@ Wire Wire Line
 Wire Wire Line
 	4100 3850 4050 3850
 $Comp
-L Connector:Conn_01x10_Female J?
+L Connector:Conn_01x10_Female J1
 U 1 1 5EC2BF9A
 P 2900 3900
-F 0 "J?" H 2792 3175 50  0000 C CNN
+F 0 "J1" H 2792 3175 50  0000 C CNN
 F 1 "Conn_01x10_Female" H 2792 3266 50  0000 C CNN
 F 2 "" H 2900 3900 50  0001 C CNN
 F 3 "~" H 2900 3900 50  0001 C CNN
@@ -286,12 +286,12 @@ NoConn ~ 5700 3050
 NoConn ~ 5700 3150
 NoConn ~ 5700 3350
 $Comp
-L Connector:Conn_01x02_Female J?
+L Connector:Conn_01x02_Female J6
 U 1 1 5EC630B1
 P 7250 4150
-F 0 "J?" H 7278 4126 50  0000 L CNN
+F 0 "J6" H 7278 4126 50  0000 L CNN
 F 1 "Conn_01x02_Female" H 7278 4035 50  0000 L CNN
-F 2 "" H 7250 4150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7250 4150 50  0001 C CNN
 F 3 "~" H 7250 4150 50  0001 C CNN
 	1    7250 4150
 	1    0    0    -1  
