@@ -1,0 +1,323 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L SparkFun-Boards:ESP32_THING_W_ANT_KEEPOUT B1
+U 1 1 5EBFF6FD
+P 5200 3550
+F 0 "B1" H 5200 4910 45  0000 C CNN
+F 1 "ESP32_THING_W_ANT_KEEPOUT" H 5200 4826 45  0000 C CNN
+F 2 "ESP32_THING" H 5200 4750 20  0001 C CNN
+F 3 "" H 5200 3550 50  0001 C CNN
+F 4 "DEV-13907" H 5200 4731 60  0000 C CNN "Campo4"
+	1    5200 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x08_Female J4
+U 1 1 5EC0084F
+P 7200 2900
+F 0 "J4" H 7228 2876 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 7228 2785 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 7200 2900 50  0001 C CNN
+F 3 "~" H 7200 2900 50  0001 C CNN
+	1    7200 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 2600 6400 2600
+Wire Wire Line
+	6400 2600 6400 4050
+Wire Wire Line
+	6400 4050 6300 4050
+Wire Wire Line
+	7000 2700 6600 2700
+Wire Wire Line
+	6600 2700 6600 4150
+Wire Wire Line
+	6600 4150 6450 4150
+Wire Wire Line
+	6000 4150 6000 4750
+Wire Wire Line
+	6000 4750 4700 4750
+Wire Wire Line
+	4700 4750 4700 4600
+Connection ~ 6000 4150
+Wire Wire Line
+	6000 4150 5750 4150
+Wire Wire Line
+	7000 2800 6100 2800
+Wire Wire Line
+	6100 2800 6100 2950
+Wire Wire Line
+	6100 2950 5700 2950
+Wire Wire Line
+	7000 2900 6250 2900
+Wire Wire Line
+	6250 2900 6250 2650
+Wire Wire Line
+	6250 2650 5700 2650
+NoConn ~ 7000 3000
+NoConn ~ 7000 3100
+NoConn ~ 7000 3200
+NoConn ~ 7000 3300
+$Comp
+L Connector:Conn_01x04_Female J2
+U 1 1 5EC0471E
+P 3850 2950
+F 0 "J2" H 3742 2525 50  0000 C CNN
+F 1 "Conn_01x04_Female" H 3742 2616 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3850 2950 50  0001 C CNN
+F 3 "~" H 3850 2950 50  0001 C CNN
+	1    3850 2950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6100 4450 6100 4150
+Wire Wire Line
+	6100 4450 5700 4450
+Connection ~ 6100 4150
+Wire Wire Line
+	6100 4150 6000 4150
+Wire Wire Line
+	4400 4600 4700 4600
+Connection ~ 4700 4600
+Wire Wire Line
+	4700 4600 4700 4450
+Wire Wire Line
+	4300 4600 4400 4600
+Connection ~ 4400 4600
+NoConn ~ 4050 3050
+$Comp
+L Connector:Conn_01x02_Female J3
+U 1 1 5EC11998
+P 3850 3950
+F 0 "J3" H 3742 3625 50  0000 C CNN
+F 1 "Conn_01x02_Female" H 3742 3716 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3850 3950 50  0001 C CNN
+F 3 "~" H 3850 3950 50  0001 C CNN
+	1    3850 3950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4050 3950 4300 3950
+Wire Wire Line
+	4300 3950 4300 4600
+Wire Wire Line
+	4700 4150 4400 4150
+Wire Wire Line
+	4400 4150 4400 4600
+Wire Wire Line
+	7000 3500 6100 3500
+Wire Wire Line
+	6100 3500 6100 4150
+Wire Wire Line
+	7000 3700 6250 3700
+Wire Wire Line
+	6250 3700 6250 3950
+Wire Wire Line
+	6250 3950 5700 3950
+$Comp
+L Connector:Conn_01x04_Female J5
+U 1 1 5EC03BB9
+P 7200 3600
+F 0 "J5" H 7228 3576 50  0000 L CNN
+F 1 "Conn_01x04_Female" H 7228 3485 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 7200 3600 50  0001 C CNN
+F 3 "~" H 7200 3600 50  0001 C CNN
+	1    7200 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 3600 5900 3600
+Wire Wire Line
+	5900 3850 5700 3850
+Wire Wire Line
+	4050 2750 4450 2750
+Wire Wire Line
+	4450 2750 4450 3350
+Wire Wire Line
+	4450 3350 4700 3350
+Wire Wire Line
+	4050 2950 4400 2950
+Wire Wire Line
+	4400 2950 4400 4150
+Connection ~ 4400 4150
+NoConn ~ 4700 2850
+NoConn ~ 4700 2750
+NoConn ~ 4700 2650
+NoConn ~ 4700 2550
+NoConn ~ 4700 3150
+NoConn ~ 4700 3250
+Wire Wire Line
+	5700 3250 5800 3250
+Wire Wire Line
+	5800 3250 5800 4850
+Wire Wire Line
+	5800 4850 4100 4850
+Wire Wire Line
+	4100 4850 4100 3850
+Wire Wire Line
+	4100 3850 4050 3850
+$Comp
+L Connector:Conn_01x10_Female J1
+U 1 1 5EC2BF9A
+P 2900 3900
+F 0 "J1" H 2792 3175 50  0000 C CNN
+F 1 "Conn_01x10_Female" H 2792 3266 50  0000 C CNN
+F 2 "" H 2900 3900 50  0001 C CNN
+F 3 "~" H 2900 3900 50  0001 C CNN
+	1    2900 3900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3100 3400 4550 3400
+Wire Wire Line
+	4550 3400 4550 2950
+Wire Wire Line
+	4550 2950 4700 2950
+Wire Wire Line
+	4700 3050 4150 3050
+Wire Wire Line
+	4150 3050 4150 3500
+Wire Wire Line
+	4150 3500 3100 3500
+Wire Wire Line
+	3100 3600 4550 3600
+Wire Wire Line
+	4550 3600 4550 3550
+Wire Wire Line
+	4550 3550 4700 3550
+Wire Wire Line
+	4700 3650 3100 3650
+Wire Wire Line
+	3100 3650 3100 3700
+Wire Wire Line
+	3100 3800 4450 3800
+Wire Wire Line
+	4450 3800 4450 3750
+Wire Wire Line
+	4450 3750 4700 3750
+Wire Wire Line
+	3100 3900 4600 3900
+Wire Wire Line
+	4600 3900 4600 3850
+Wire Wire Line
+	4600 3850 4700 3850
+Wire Wire Line
+	3750 4000 3750 5000
+Wire Wire Line
+	3750 5000 5850 5000
+Wire Wire Line
+	5850 5000 5850 3450
+Wire Wire Line
+	5850 3450 5700 3450
+Wire Wire Line
+	3100 4000 3750 4000
+Wire Wire Line
+	5900 3600 5900 3850
+Wire Wire Line
+	5700 3550 5950 3550
+Wire Wire Line
+	5950 3550 5950 5100
+Wire Wire Line
+	5950 5100 3700 5100
+Wire Wire Line
+	3700 5100 3700 4100
+Wire Wire Line
+	3700 4100 3100 4100
+Wire Wire Line
+	3100 4200 3600 4200
+Wire Wire Line
+	3600 4200 3600 5150
+Wire Wire Line
+	3600 5150 6050 5150
+Wire Wire Line
+	6050 5150 6050 3650
+Wire Wire Line
+	6050 3650 5700 3650
+Wire Wire Line
+	5700 3750 6200 3750
+Wire Wire Line
+	6200 3750 6200 5300
+Wire Wire Line
+	6200 5300 3100 5300
+Wire Wire Line
+	3100 5300 3100 4300
+NoConn ~ 4700 4350
+NoConn ~ 4700 4250
+NoConn ~ 5700 4350
+NoConn ~ 5700 4250
+Wire Wire Line
+	4700 4050 4550 4050
+Wire Wire Line
+	4550 4050 4550 4800
+Wire Wire Line
+	4550 4800 6300 4800
+Wire Wire Line
+	6300 4800 6300 4050
+Connection ~ 6300 4050
+Wire Wire Line
+	6300 4050 5700 4050
+NoConn ~ 4700 3950
+NoConn ~ 4700 3450
+Wire Wire Line
+	5700 2550 5750 2550
+Wire Wire Line
+	5750 2550 5750 4150
+Connection ~ 5750 4150
+Wire Wire Line
+	5750 4150 5700 4150
+NoConn ~ 5700 2750
+NoConn ~ 5700 2850
+NoConn ~ 5700 3050
+NoConn ~ 5700 3150
+NoConn ~ 5700 3350
+$Comp
+L Connector:Conn_01x02_Female J6
+U 1 1 5EC630B1
+P 7250 4150
+F 0 "J6" H 7278 4126 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 7278 4035 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7250 4150 50  0001 C CNN
+F 3 "~" H 7250 4150 50  0001 C CNN
+	1    7250 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 3800 7000 4000
+Wire Wire Line
+	7000 4150 7050 4150
+Wire Wire Line
+	4050 2850 4350 2850
+Wire Wire Line
+	4350 2850 4350 2150
+Wire Wire Line
+	4350 2150 6800 2150
+Wire Wire Line
+	6800 2150 6800 4000
+Wire Wire Line
+	6800 4000 7000 4000
+Connection ~ 7000 4000
+Wire Wire Line
+	7000 4000 7000 4150
+Wire Wire Line
+	7050 4250 6450 4250
+Wire Wire Line
+	6450 4250 6450 4150
+Connection ~ 6450 4150
+Wire Wire Line
+	6450 4150 6100 4150
+$EndSCHEMATC

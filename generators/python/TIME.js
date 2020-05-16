@@ -33,22 +33,18 @@ Blockly.Python['conf_rtc'] = function(block) {
   var variable_rtc = Blockly.Python.variableDB_.getName(block.getFieldValue('rtc'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_rtc'] = 'from machine import RTC';
-  var code = variable_rtc + ' = RTC()\n';
+  Blockly.Python.definitions_['import_ntp'] = 'import ntptime';
+  var code = 'ntptime.settime()\n' + variable_rtc + ' = RTC()\n';
   return code;
 };
 
-Blockly.Python['set_date'] = function(block) {
+Blockly.Python['act_fecha'] = function(block) {
   var value_variable = Blockly.Python.valueToCode(block, 'Variable', Blockly.Python.ORDER_ATOMIC);
-  var number_ano = block.getFieldValue('Ano');
-  var dropdown_mes = block.getFieldValue('Mes');
-  var number_dia = block.getFieldValue('Dia');
-  var number_hora = block.getFieldValue('Hora');
-  var number_minuto = block.getFieldValue('Minuto');
-  var number_segundo = block.getFieldValue('Segundo');
   // TODO: Assemble Python into code variable.
-  var code = value_variable + '.datetime((' + number_ano + ', ' + dropdown_mes + ', ' + number_dia + ', 0, ' + number_hora + ', ' + number_minuto + ', ' + number_segundo + ', 0))\n';
+  var code = '(y34r,m0nth,md4y,w33k0fy34r,h0ur,m1nut3,s3c0nd,m1l1s3cond)=' + value_variable + '.datetime()\n' + value_variable + '.datetime((y34r,m0nth,md4y,w33k0fy34r,h0ur-5,m1nut3,s3c0nd,m1l1s3cond))\n';
   return code;
 };
+
 
 Blockly.Python['read_rtc'] = function(block) {
   var value_variable = Blockly.Python.valueToCode(block, 'Variable', Blockly.Python.ORDER_ATOMIC);

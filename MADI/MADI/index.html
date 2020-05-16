@@ -12,6 +12,9 @@
   <script src="../../javascript_compressed.js"></script>
   <script src="../../python_compressed.js"></script>
   <script src="../../music_maker.js"></script>
+  <script id="hcsr04" src="trabajo/hcsr04.py"></script>
+  <script id="mpu6050" src="trabajo/mpu6050.py"></script>
+  <script id="ntptime" src="trabajo/ntptime.py"></script>
   <script src="code.js"></script>
 
 
@@ -348,7 +351,7 @@
         </value>
       </block>
       <block type="conf_rtc"></block>
-      <block type="set_date">
+      <block type="act_fecha">
         <value name="Variable">
           <block type="variables_get" inline="false">
             <field name="VAR">Fecha</field>
@@ -495,7 +498,7 @@
           </shadow>
         </value>
       </block>
-      <block type="math_random_float"></block>
+      <!--<block type="math_random_float"></block>-->
       <block type="math_atan2">
         <value name="X">
           <shadow type="math_number">
@@ -639,7 +642,7 @@
     </category>
     <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
       <block type="colour_picker"></block>
-      <block type="colour_random"></block>
+      <!--<block type="colour_random"></block>-->
       <block type="colour_rgb">
         <value name="RED">
           <shadow type="math_number">

@@ -37,20 +37,12 @@ Blockly.JavaScript['conf_rtc'] = function(block) {
   return code;
 };
 
-
-Blockly.JavaScript['set_date'] = function(block) {
+Blockly.JavaScript['act_fecha'] = function(block) {
   var value_variable = Blockly.JavaScript.valueToCode(block, 'Variable', Blockly.JavaScript.ORDER_ATOMIC);
-  var number_ano = block.getFieldValue('Ano');
-  var dropdown_mes = block.getFieldValue('Mes');
-  var number_dia = block.getFieldValue('Dia');
-  var number_hora = block.getFieldValue('Hora');
-  var number_minuto = block.getFieldValue('Minuto');
-  var number_segundo = block.getFieldValue('Segundo');
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   return code;
 };
-
 
 Blockly.JavaScript['read_rtc'] = function(block) {
   var value_variable = Blockly.JavaScript.valueToCode(block, 'Variable', Blockly.JavaScript.ORDER_ATOMIC);

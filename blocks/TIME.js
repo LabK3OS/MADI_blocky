@@ -65,38 +65,11 @@ Blockly.Blocks['conf_rtc'] = {
 };
 
 
-Blockly.Blocks['set_date'] = {
+Blockly.Blocks['act_fecha'] = {
   init: function() {
     this.appendValueInput("Variable")
         .setCheck(null)
-        .appendField("Establecer Fecha a");
-    this.appendDummyInput()
-        .appendField("Año")
-        .appendField(new Blockly.FieldNumber(2020, 2015, 10000, 1), "Ano")
-        .appendField("Mes")
-        .appendField(new Blockly.FieldDropdown([
-          ["Enero","1"],
-          ["Febrero","2"],
-          ["Marzo","3"],
-          ["Abril","4"],
-          ["Mayo","5"],
-          ["Junio","6"],
-          ["Julio","7"],
-          ["Agosto","8"],
-          ["Septiembre","9"],
-          ["Octubre","10"],
-          ["Noviembre","11"],
-          ["Diciembre","12"]
-        ]), "Mes")
-        .appendField("Dia")
-        .appendField(new Blockly.FieldNumber(1, 1, 31, 1), "Dia");
-    this.appendDummyInput()
-        .appendField("Hora")
-        .appendField(new Blockly.FieldNumber(0, 0, 23, 1), "Hora")
-        .appendField("Minuto")
-        .appendField(new Blockly.FieldNumber(0, 0, 60, 1), "Minuto")
-        .appendField("Segundo")
-        .appendField(new Blockly.FieldNumber(0, 0, 60, 1), "Segundo");
+        .appendField("Sincronizar Fecha");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(198);
@@ -104,6 +77,7 @@ Blockly.Blocks['set_date'] = {
  this.setHelpUrl("");
   }
 };
+
 
 Blockly.Blocks['read_rtc'] = {
   init: function() {
@@ -124,7 +98,7 @@ Blockly.Blocks['separar_fecha'] = {
         .setCheck("Array")
         .appendField("Obtener")
         .appendField(new Blockly.FieldDropdown([["Segundos","6"], ["Minutos","5"], ["Hora","4"], ["Día","2"], ["Mes","1"], ["Año","0"]]), "opcion")
-        .appendField("de fecha");
+        .appendField("de Fecha Completa");
     this.setOutput(true, null);
     this.setColour(198);
  this.setTooltip("");
