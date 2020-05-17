@@ -561,8 +561,9 @@ function Desc() {
   var code = Blockly.Python.workspaceToCode(Code.workspace);
   alert(code);
   var code1 = Blockly.Python.workspaceToCode(Code.workspace);
-  Descargar(code1);
   tipo_descarga = 1;
+  Descargar(code1);
+
   //Code.attemptCodeGeneration(Blockly.Python, 'py',1);
 }
 
@@ -646,7 +647,10 @@ function Conectar() {
   }
 }
 var contra = "1234";
-
+var arreglo=0;
+var po=0;
+var auxl="";
+var arreglo2=[];
 function connect(url, por) {
   window.location.hash = url.substring(5);
   ws = new WebSocket(`ws://${url}:${por}/`);
@@ -657,6 +661,33 @@ function connect(url, por) {
     ws.send(passw);
     ws.send('\r');
     ws.onmessage = function(event) {
+      console.log(event.data);
+
+      if(event.data=="[" || arreglo==1)
+      {
+        arreglo=1;
+        if(event.data=="'" && po==0)
+        {
+          po=1;
+        }
+        else if(event.data=="'" && po==1)
+        {
+          po=0;
+          arreglo2.push(auxl);
+          alert(auxl);
+          auxl="";
+        }
+        else if(po==1)
+        {
+          auxl=auxl+event.data;
+        }
+      }
+      else if(event.data=="]")
+      {
+        aler("1");
+        arreglo=0;
+        alert(arreglo2[0]);
+      }
       if (event.data instanceof ArrayBuffer) {
         var data = new Uint8Array(event.data);
         switch (binary_state) {
@@ -723,9 +754,12 @@ function connect(url, por) {
             console.log('GET_VER', data);
             binary_state = 0;
             break;
+          case 41:
+            alert("entre aqui");
+          break;
         }
       }
-      alert(event.data);
+      //alert(event.data);
     };
   };
   ws.onerror = function(event) {
@@ -921,4 +955,9 @@ function guardado()
   var xml_text = Blockly.Xml.domToText(xml);
   tipo_descarga = 2;
   Descargar(xml_text);
+}
+
+function verificar()
+{
+  ws.send("os.listdir()\r");
 }

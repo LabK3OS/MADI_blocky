@@ -11,5 +11,6 @@ def do_connect():
     print('network config:', wlan.ifconfig())
 do_connect()
 import webrepl
+import os
 webrepl.start()
 print("ya escribi")
