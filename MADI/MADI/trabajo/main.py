@@ -1,16 +1,20 @@
-from machine import Pin
+import time
+import tcs34725
+from machine import I2C, Pin
 
-Entrada = None
+def html_rgb(data):
+    r, g, b, c = data
+    red = pow((int((r/c) * 256) / 255), 2.5) * 255
+    green = pow((int((g/c) * 256) / 255), 2.5) * 255
+    blue = pow((int((b/c) * 256) / 255), 2.5) * 255
+    return red, green, blue
 
-"""Describe esta función...
-"""
-def hacer_algo():
-  global Entrada
-  print('INTERRUPCION')
 
-
-Entrada=Pin(12, Pin.IN,Pin.PULL_UP)
-Entrada.irq(trigger = Pin.IRQ_RISING, handler = lambda t:hacer_algo())
-
-while True:
-  pass
+i2c = I2C(scl=Pin(5), sda=Pin(4))
+sensor = tcs34725.TCS34725(i2c)
+sensor.gain(60)
+print(sensor.active())
+time.sleep_ms(500)
+print(sensor.read(True))
+print(html_rgb(sensor.read(True))))
+time.sleep_ms(20)
