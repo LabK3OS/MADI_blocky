@@ -901,11 +901,11 @@ function jsNota(frecuencia, tempo) {
   var o = context.createOscillator();
   var g = context.createGain();
   o.connect(g);
-  o.type = "square";
+  o.type = "sine";
   o.frequency.value = frecuencia;
   g.connect(context.destination);
   o.start(0);
-  g.gain.exponentialRampToValueAtTime(0.0000001, context.currentTime + tempo);
+  g.gain.exponentialRampToValueAtTime(0.000001, context.currentTime + tempo);
 }
 
 function sleepi(milliseconds) {
