@@ -1,4 +1,4 @@
-#DAC function
+#DAC function https://github.com/loboris/MicroPython_ESP32_psRAM_LoBo/wiki/dac
 from machine import DAC #import Pin module，8bit DAC parameter range:0-255，output voltage range:0-3.3V
 dac0=DAC(Pin(25))
 
