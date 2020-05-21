@@ -885,10 +885,10 @@ var pin_out = [0, 2, 4, 5, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 2
 
 
 
-function MusicMaker(So, tempo) {   //eval('moverImagen(\'adelante\')');
+function MusicMaker(So, tempo, tipo) {   //eval('moverImagen(\'adelante\')');
   var frecuencia = parseFloat(So);
   var tiempo = parseFloat(tempo);
-    jsNota(frecuencia, tiempo);
+    jsNota(frecuencia, tiempo, tipo);
     tiempo = tiempo * 1000;
   sleepi(tiempo);
 }
@@ -896,16 +896,16 @@ function MusicMaker(So, tempo) {   //eval('moverImagen(\'adelante\')');
 
 var context = new AudioContext();
 
-function jsNota(frecuencia, tempo) {
+function jsNota(frecuencia, tempo, tipo) {
 
   var o = context.createOscillator();
   var g = context.createGain();
   o.connect(g);
-  o.type = "sine";
+  o.type = tipo;
   o.frequency.value = frecuencia;
   g.connect(context.destination);
   o.start(0);
-  g.gain.exponentialRampToValueAtTime(0.000001, context.currentTime + tempo);
+  g.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + tempo);
 }
 
 function sleepi(milliseconds) {
