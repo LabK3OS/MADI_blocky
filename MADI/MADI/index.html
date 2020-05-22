@@ -214,12 +214,19 @@
       <block type="logic_ternary"></block>
     </category>
     <category name="Notas" colour="324">
-      <block type="Musica"></block>
       <block type="bajo"></block>
       <block type="piano"></block>
       <block type="xilofono"></block>
       <block type="percusion"></block>
       <block type="guitarra"></block>
+      <block type="sonidos">
+        <value name="porcentaje">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="parar_sonido"></block>
     </category>
     <category name="Sensores" colour="54">
       <block type="sensor_ultrasonico"></block>

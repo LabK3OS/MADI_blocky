@@ -217,7 +217,7 @@ Blockly.Blocks['piano'] = {
 Blockly.Blocks['xilofono'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Tocar Xilofono, Nota")
+        .appendField("Tocar Xilófono, Nota")
         .appendField(new Blockly.FieldDropdown([
           ["C4", "262"],
           ["C4#", "277"],
@@ -407,6 +407,43 @@ Blockly.Blocks['guitarra'] = {
           ["1/4","0.25"],
           ["1/8","0.125"]
         ]), "Tempo");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(324);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['sonidos'] = {
+  init: function() {
+    this.appendValueInput("porcentaje")
+        .setCheck(null)
+        .appendField("Tocar")
+        .appendField(new Blockly.FieldDropdown([
+          ["Bajo","0"],
+          ["Piano","1"],
+          ["Xilófono","2"],
+          ["Percusión","3"],
+          ["Guitarra","4"]
+        ]), "Instrumento")
+        .appendField(", al");
+    this.appendDummyInput()
+        .appendField("% de frecuencia");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(324);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['parar_sonido'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Detener Sonido");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(324);

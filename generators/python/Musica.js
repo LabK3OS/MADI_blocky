@@ -95,3 +95,61 @@ Blockly.Python['guitarra'] = function(block) {
   var code = 'dac0.waveform(' + dropdown_nota + ',SAWTOOTH,' + dropdown_tempo + ')\ntime.sleep_ms(' + pausa +')\n';
   return code;
 };
+
+
+Blockly.Python['sonidos'] = function(block) {
+  var dropdown_instrumento = block.getFieldValue('Instrumento');
+  var value_porcentaje = Blockly.Python.valueToCode(block, 'porcentaje', Blockly.Python.ORDER_ATOMIC);
+  Blockly.Python.definitions_['import_time'] = 'import time';
+  Blockly.Python.definitions_['import_pin'] = 'from machine import Pin';
+  Blockly.Python.definitions_['import_dac'] = 'from machine import DAC';
+  Blockly.Python.definitions_['import_musica'] = 'dac0=DAC(Pin(25))';
+  Blockly.Python.definitions_['import_math'] = 'import math';
+  // TODO: Assemble Python into code variable.
+  var functionName = Blockly.Python.provideFunction_(
+      'por_sonido',
+      ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(p,t):',
+       '  if p>100:',
+       '    p=100',
+       '  elif p<0:',
+       '    p=0',
+       '  if t==0:',
+       '    fre=round(((247-65)*p/100)+65)',
+       '  elif t==1:',
+       '    fre=round(((2093-262)*p/100)+262)',
+       '  elif t==2:',
+       '    fre=round(((2093-262)*p/100)+262)',
+       '  elif t==3:',
+       '    fre=round(((247-65)*p/100)+65)',
+       '  elif t==4:',
+       '    fre=round(((2093-65)*p/100)+65)',
+       '  return (fre)']);
+
+  dropdown_instrumento = parseInt(dropdown_instrumento);
+  switch (dropdown_instrumento)
+  {
+    case 0:
+      var tipo = "SINE";
+    break;
+    case 1:
+      var tipo = "SINE";
+    break;
+    case 2:
+      var tipo = "TRIANGLE";
+    break;
+    case 3:
+      var tipo = "TRIANGLE";
+    break;
+    case 4:
+      var tipo = "SAWTOOTH";
+    break;
+  }
+  var code = 'dac0.waveform(' + functionName + '(' + value_porcentaje + ', ' + dropdown_instrumento + '),' + tipo + ')\n';
+  return code;
+};
+
+Blockly.Python['parar_sonido'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'dac0.stopwave()\n';
+  return code;
+};
