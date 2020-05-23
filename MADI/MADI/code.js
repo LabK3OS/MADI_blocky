@@ -905,7 +905,7 @@ function jsNota(frecuencia, tempo, tipo) {
   o.frequency.value = frecuencia;
   g.connect(context.destination);
   o.start(0);
-  g.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + tempo);
+  g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + tempo);
 }
 
 function sleepi(milliseconds) {

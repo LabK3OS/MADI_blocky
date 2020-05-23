@@ -62,46 +62,39 @@ Blockly.JavaScript['sonidos'] = function(block) {
   var value_porcentaje = Blockly.JavaScript.valueToCode(block, 'porcentaje', Blockly.JavaScript.ORDER_ATOMIC);
   var functionName = Blockly.JavaScript.provideFunction_(
       'por_sonido',
-      ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ + '() {',
-        '  var num = Math.floor(Math.random() * Math.pow(2, 24));',
-        '  return \'#\' + (\'00000\' + num.toString(16)).substr(-6);',
+      ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ + '(p,t) {',
+        '  if(p>100){',
+        '    p=100;}',
+        '  else if(p<0){',
+        '    p=0;}',
+        '  switch (t){',
+        '   case 0:',
+        '     var tipo = "sine";',
+        '     var frecuencia = ((247-65)*p/100)+65;',
+        '   break;',
+        '   case 1:',
+        '     var tipo = "sine";',
+        '     var frecuencia = ((2093-262)*p/100)+262;',
+        '   break;',
+        '   case 2:',
+        '     var tipo = "triangle";',
+        '     var frecuencia = ((2093-262)*p/100)+262;',
+        '   break;',
+        '   case 3:',
+        '     var tipo = "triangle";',
+        '     var frecuencia = ((247-65)*p/100)+65;',
+        '   break;',
+        '   case 4:',
+        '     var tipo = "sawtooth";',
+        '     var frecuencia = ((2093-65)*p/100)+65;',
+        '    break;}',
+        '  MusicMaker(Math.round(frecuencia),0.5,tipo);',
+        '  sleepi(0.5);',
         '}']);
-  // TODO: Assemble JavaScript into code variable.
-  var dropdown_tempo = 0.5;
+  // TODO: Assemble JavaScr
   dropdown_instrumento = parseInt(dropdown_instrumento);
-  value_porcentaje = parseFloat(value_porcentaje)/100;
-  if(value_porcentaje>1)
-  {
-    value_porcentaje=1;
-  }
-  else if(value_porcentaje<0)
-  {
-    value_porcentaje=0;
-  }
-  switch (dropdown_instrumento)
-  {
-    case 0:
-      var tipo = "\"sine\"";
-      var frecuencia = ((247-65)*value_porcentaje)+65;
-    break;
-    case 1:
-      var tipo = "\"sine\"";
-      var frecuencia = ((2093-262)*value_porcentaje)+262;
-    break;
-    case 2:
-      var tipo = "\"triangle\"";
-      var frecuencia = ((2093-262)*value_porcentaje)+262;
-    break;
-    case 3:
-      var tipo = "\"triangle\"";
-      var frecuencia = ((247-65)*value_porcentaje)+65;
-    break;
-    case 4:
-      var tipo = "\"sawtooth\"";
-      var frecuencia = ((2093-65)*value_porcentaje)+65;
-    break;
-  }
-  return 'MusicMaker(' + Math.round(frecuencia) + ',' + dropdown_tempo + ', ' + tipo + ');\nsleepi(' + dropdown_tempo + ');\n';
+
+  return functionName + '(' + value_porcentaje + ',' + dropdown_instrumento + ');\n';
 };
 
 Blockly.JavaScript['parar_sonido'] = function(block) {
