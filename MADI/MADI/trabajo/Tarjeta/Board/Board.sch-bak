@@ -177,7 +177,7 @@ U 1 1 5EC2BF9A
 P 2900 3900
 F 0 "J1" H 2792 3175 50  0000 C CNN
 F 1 "Conn_01x10_Female" H 2792 3266 50  0000 C CNN
-F 2 "" H 2900 3900 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 2900 3900 50  0001 C CNN
 F 3 "~" H 2900 3900 50  0001 C CNN
 	1    2900 3900
 	-1   0    0    1   
@@ -217,45 +217,7 @@ Wire Wire Line
 Wire Wire Line
 	4600 3850 4700 3850
 Wire Wire Line
-	3750 4000 3750 5000
-Wire Wire Line
-	3750 5000 5850 5000
-Wire Wire Line
-	5850 5000 5850 3450
-Wire Wire Line
-	5850 3450 5700 3450
-Wire Wire Line
-	3100 4000 3750 4000
-Wire Wire Line
 	5900 3600 5900 3850
-Wire Wire Line
-	5700 3550 5950 3550
-Wire Wire Line
-	5950 3550 5950 5100
-Wire Wire Line
-	5950 5100 3700 5100
-Wire Wire Line
-	3700 5100 3700 4100
-Wire Wire Line
-	3700 4100 3100 4100
-Wire Wire Line
-	3100 4200 3600 4200
-Wire Wire Line
-	3600 4200 3600 5150
-Wire Wire Line
-	3600 5150 6050 5150
-Wire Wire Line
-	6050 5150 6050 3650
-Wire Wire Line
-	6050 3650 5700 3650
-Wire Wire Line
-	5700 3750 6200 3750
-Wire Wire Line
-	6200 3750 6200 5300
-Wire Wire Line
-	6200 5300 3100 5300
-Wire Wire Line
-	3100 5300 3100 4300
 NoConn ~ 4700 4350
 NoConn ~ 4700 4250
 NoConn ~ 5700 4350
@@ -320,4 +282,44 @@ Wire Wire Line
 Connection ~ 6450 4150
 Wire Wire Line
 	6450 4150 6100 4150
+Wire Wire Line
+	3100 4000 3600 4000
+Wire Wire Line
+	3600 4000 3600 5000
+Wire Wire Line
+	3600 5000 5850 5000
+Wire Wire Line
+	5850 5000 5850 3750
+Wire Wire Line
+	5850 3750 5700 3750
+Wire Wire Line
+	3100 4100 3550 4100
+Wire Wire Line
+	3550 4100 3550 5050
+Wire Wire Line
+	3550 5050 5950 5050
+Wire Wire Line
+	5950 5050 5950 3650
+Wire Wire Line
+	5950 3650 5700 3650
+Wire Wire Line
+	3500 4200 3500 5150
+Wire Wire Line
+	3500 5150 6050 5150
+Wire Wire Line
+	6050 5150 6050 3550
+Wire Wire Line
+	6050 3550 5700 3550
+Wire Wire Line
+	3100 4200 3500 4200
+Wire Wire Line
+	3100 4300 3400 4300
+Wire Wire Line
+	3400 4300 3400 5200
+Wire Wire Line
+	3400 5200 6150 5200
+Wire Wire Line
+	6150 5200 6150 3450
+Wire Wire Line
+	6150 3450 5700 3450
 $EndSCHEMATC

@@ -1,3 +1,4 @@
+#import webrepl_setup
 
 def do_connect():
     import network
@@ -13,4 +14,3 @@ do_connect()
 import webrepl
 import os
 webrepl.start()
-print("ya escribi")

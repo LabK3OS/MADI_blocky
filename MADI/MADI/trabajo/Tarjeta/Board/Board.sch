@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Board-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L SparkFun-Boards:ESP32_THING_W_ANT_KEEPOUT B1
+L Board-rescue:ESP32_THING_W_ANT_KEEPOUT-SparkFun-Boards B1
 U 1 1 5EBFF6FD
 P 5200 3550
 F 0 "B1" H 5200 4910 45  0000 C CNN
@@ -118,7 +119,7 @@ Wire Wire Line
 Wire Wire Line
 	4700 4150 4400 4150
 Wire Wire Line
-	4400 4150 4400 4600
+	4400 4150 4400 4300
 Wire Wire Line
 	7000 3500 6100 3500
 Wire Wire Line
@@ -145,12 +146,6 @@ Wire Wire Line
 Wire Wire Line
 	5900 3850 5700 3850
 Wire Wire Line
-	4050 2750 4450 2750
-Wire Wire Line
-	4450 2750 4450 3350
-Wire Wire Line
-	4450 3350 4700 3350
-Wire Wire Line
 	4050 2950 4400 2950
 Wire Wire Line
 	4400 2950 4400 4150
@@ -161,16 +156,6 @@ NoConn ~ 4700 2650
 NoConn ~ 4700 2550
 NoConn ~ 4700 3150
 NoConn ~ 4700 3250
-Wire Wire Line
-	5700 3250 5800 3250
-Wire Wire Line
-	5800 3250 5800 4850
-Wire Wire Line
-	5800 4850 4100 4850
-Wire Wire Line
-	4100 4850 4100 3850
-Wire Wire Line
-	4100 3850 4050 3850
 $Comp
 L Connector:Conn_01x10_Female J1
 U 1 1 5EC2BF9A
@@ -190,8 +175,6 @@ Wire Wire Line
 	4550 2950 4700 2950
 Wire Wire Line
 	4700 3050 4150 3050
-Wire Wire Line
-	4150 3050 4150 3500
 Wire Wire Line
 	4150 3500 3100 3500
 Wire Wire Line
@@ -234,7 +217,6 @@ Connection ~ 6300 4050
 Wire Wire Line
 	6300 4050 5700 4050
 NoConn ~ 4700 3950
-NoConn ~ 4700 3450
 Wire Wire Line
 	5700 2550 5750 2550
 Wire Wire Line
@@ -322,4 +304,35 @@ Wire Wire Line
 	6150 5200 6150 3450
 Wire Wire Line
 	6150 3450 5700 3450
+NoConn ~ 5700 3250
+Wire Wire Line
+	4150 3050 4150 3500
+Wire Wire Line
+	4700 3350 4250 3350
+Wire Wire Line
+	4250 3350 4250 3850
+Wire Wire Line
+	4250 3850 4050 3850
+Wire Wire Line
+	4700 3450 4100 3450
+Wire Wire Line
+	4100 3450 4100 2750
+Wire Wire Line
+	4100 2750 4050 2750
+$Comp
+L power:GND #PWR0101
+U 1 1 5ECF0132
+P 4000 4300
+F 0 "#PWR0101" H 4000 4050 50  0001 C CNN
+F 1 "GND" H 4005 4127 50  0000 C CNN
+F 2 "" H 4000 4300 50  0001 C CNN
+F 3 "" H 4000 4300 50  0001 C CNN
+	1    4000 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 4300 4400 4300
+Connection ~ 4400 4300
+Wire Wire Line
+	4400 4300 4400 4600
 $EndSCHEMATC

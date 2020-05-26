@@ -897,7 +897,10 @@ function MusicMaker(So, tempo, tipo) {   //eval('moverImagen(\'adelante\')');
 var context = new AudioContext();
 
 function jsNota(frecuencia, tempo, tipo) {
-
+  if(tipo==null)
+  {
+    tipo="sine";
+  }
   var o = context.createOscillator();
   var g = context.createGain();
   o.connect(g);
