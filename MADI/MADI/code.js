@@ -629,20 +629,28 @@ var get_file_name = null;
 var get_file_data = null;
 var card_ip = "ws://192.168.0.1:8266/";
 var puer = "8266";
+var cardIP;
+var puert;
 
 function Conectar() {
   if (connected) {
     ws.close();
   } else {
-    var cardIP = prompt("Ingrese la dirección IP de la tarjeta a programar", card_ip);
-    var puert = prompt("Ingrese el puerto de la tarjeta a programar", puer);
+    if(cardIP==null || puert==null)
+    {
+      cardIP = prompt("Ingrese la dirección IP de la tarjeta a programar", card_ip);
+      puert = prompt("Ingrese el puerto de la tarjeta a programar", puer);
+    }
+    else{
+      alert("Reconectando...");
+    }
     if(card_ip==null || puert==null){
       alert("Conexión Cancelada");
     }
     else{
       connected = true;
       alert(`ws://${cardIP}:${puert}/`);
-      connect(cardIP, puert);
+      connect1(cardIP, puert);
     }
   }
 }
@@ -651,13 +659,16 @@ var arreglo=0;
 var po=0;
 var auxl="";
 var arreglo2=[];
-function connect(url, por) {
+var passw;
+function connect1(url, por) {
   window.location.hash = url.substring(5);
   ws = new WebSocket(`ws://${url}:${por}/`);
   ws.binaryType = 'arraybuffer';
   ws.onopen = function() {
-
-    var passw = prompt("Ingrese contraseña", contra);
+    if(passw==null)
+    {
+      passw = prompt("Ingrese contraseña", contra);
+    }
     ws.send(passw);
     ws.send('\r');
     ws.onmessage = function(event) {
@@ -704,7 +715,8 @@ function connect(url, por) {
           case 12:
             // final response for put
             binary_state = 0;
-            alert("archivo enviado");
+            alert("archivo enviado, Reconecte tarjeta");
+            ws.send("\x04");
             break;
 
           case 21:
