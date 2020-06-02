@@ -38,8 +38,8 @@ Blockly.Python['colour_picker'] = function(block) {
 
 Blockly.Python['colour_random'] = function(block) {
   // Generate a random colour.
-  Blockly.Python.definitions_['import_random'] = 'from random import *';
-  var code = '(randint(0, 2**8 - 1),randint(0, 2**8 - 1),randint(0, 2**8 - 1))';
+  Blockly.Python.definitions_['import_random'] = 'import random';
+  var code = '(random.randint(0, 2**8 - 1),random.randint(0, 2**8 - 1),random.randint(0, 2**8 - 1))';
   //var code = '\'#%06x\' % random.randint(0, 2**24 - 1)';
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
