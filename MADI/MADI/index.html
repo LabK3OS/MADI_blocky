@@ -214,20 +214,61 @@
       <block type="logic_ternary"></block>
     </category>
     <category name="Notas" colour="324">
-      <block type="Musica"></block>
-      <block type="bajo"></block>
-      <block type="piano"></block>
-      <block type="xilofono"></block>
-      <block type="percusion"></block>
-      <block type="guitarra"></block>
+      <block type="crear_musica"></block>
+      <block type="bajo">
+      <value name="Variable">
+        <block type="variables_get" inline="false">
+          <field name="VAR">musica_1</field>
+        </block>
+      </value>
+      </block>
+      <block type="piano">
+      <value name="Variable">
+        <block type="variables_get" inline="false">
+          <field name="VAR">musica_1</field>
+        </block>
+      </value>
+      </block>
+      <block type="xilofono">
+      <value name="Variable">
+        <block type="variables_get" inline="false">
+          <field name="VAR">musica_1</field>
+        </block>
+      </value>
+      </block>
+      <block type="percusion">
+      <value name="Variable">
+        <block type="variables_get" inline="false">
+          <field name="VAR">musica_1</field>
+        </block>
+      </value>
+      </block>
+      <block type="guitarra">
+      <value name="Variable">
+        <block type="variables_get" inline="false">
+          <field name="VAR">musica_1</field>
+        </block>
+      </value>
+      </block>
       <block type="sonidos">
         <value name="porcentaje">
           <shadow type="math_number">
             <field name="NUM">50</field>
           </shadow>
         </value>
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">musica_1</field>
+          </block>
+        </value>
       </block>
-      <block type="parar_sonido"></block>
+      <block type="parar_sonido">
+        <value name="Variable">
+          <block type="variables_get" inline="false">
+            <field name="VAR">musica_1</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="Sensores" colour="54">
       <block type="sensor_ultrasonico"></block>

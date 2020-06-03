@@ -12,6 +12,12 @@ Blockly.JavaScript['Musica'] = function(block) {
   return 'MusicMaker(' + dropdown_nota + ',' + dropdown_name + ');\nsleepi(' + dropdown_name + ');\n';
 };
 
+Blockly.JavaScript['crear_musica'] = function(block) {
+  var variable_variable = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('Variable'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
 
 Blockly.JavaScript['bajo'] = function(block) {
   var dropdown_nota = block.getFieldValue('Nota');
