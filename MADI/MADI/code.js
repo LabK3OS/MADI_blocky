@@ -509,7 +509,8 @@ Code.runJS = function() {
   //Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
     alert(code);
-    iniciador_de_pines()
+    iniciador_de_pines();
+    alert("hola mundo");
     eval(code);
     comprobador_de_pines();
   } catch (e) {
