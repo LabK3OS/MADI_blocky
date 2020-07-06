@@ -510,7 +510,6 @@ Code.runJS = function() {
   try {
     alert(code);
     iniciador_de_pines();
-    alert("hola mundo");
     eval(code);
     comprobador_de_pines();
   } catch (e) {
