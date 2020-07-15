@@ -509,6 +509,7 @@ Code.runJS = function() {
   //Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
     alert(code);
+    iniciador_de_pines();
     eval(code);
     comprobador_de_pines();
   } catch (e) {
@@ -852,12 +853,10 @@ function correccion(arr) {
 function enviar() {
   Blockly.Python.INFINITE_LOOP_TRAP = null;
   var code = toUTF8Array(Blockly.Python.workspaceToCode(Code.workspace));
-
   var dest_fname = "main.py";
   put_file_data = new Uint8Array(code);
   correccion(put_file_data);
   var dest_fsize = put_file_data.length;
-
   // WEBREPL_FILE = "<2sBBQLH64s"
   var rec = new Uint8Array(2 + 1 + 1 + 8 + 4 + 2 + 64);
   rec[0] = 'W'.charCodeAt(0);
