@@ -910,7 +910,7 @@ var context = new AudioContext();
 function jsNota(frecuencia, tempo, tipo) {
   if(tipo==null)
   {
-    tipo="sine";
+    tipo="sawtooth";
   }
   var o = context.createOscillator();
   var g = context.createGain();
